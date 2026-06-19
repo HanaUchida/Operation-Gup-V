@@ -3,70 +3,75 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="robots" content="noindex">
     <title>Operation Gup-V Command Center</title>
     <script src="https://cdn.tailwindcss.com"></script>
     <style>
         details > summary { list-style: none; }
         details > summary::-webkit-details-marker { display: none; }
+        /* Optional: Hide scrollbar for cleaner mobile look */
+        .hide-scrollbar::-webkit-scrollbar { display: none; }
+        .hide-scrollbar { -ms-overflow-style: none; scrollbar-width: none; }
     </style>
 </head>
-<body class="bg-blue-900 text-slate-800 h-screen flex overflow-hidden font-sans">
+<body class="bg-blue-900 text-slate-800 h-screen flex flex-col md:flex-row overflow-hidden font-sans">
 
-    <aside class="w-64 bg-slate-800 flex flex-col border-r border-slate-900 shadow-2xl z-20 text-white shrink-0">
-        <div class="h-20 flex items-center justify-center bg-slate-900 font-extrabold text-xl uppercase tracking-widest border-b border-slate-950 shadow-md text-orange-400">Op Gup-V</div>
-        <nav class="flex-1 overflow-y-auto p-4 space-y-3">
-            <div data-target="week-1" class="nav-btn bg-slate-700 p-3 rounded shadow-sm border-l-8 border-orange-500 cursor-pointer transition duration-200"><div class="text-xs font-bold text-orange-400 uppercase tracking-wider">Week 1</div><div class="font-bold text-lg leading-tight text-white mt-1">Magma Chambers</div></div>
-            <div data-target="week-2" class="nav-btn bg-slate-800 hover:bg-slate-700 p-3 rounded cursor-pointer border-l-8 border-transparent transition duration-200"><div class="text-xs font-bold text-slate-400 uppercase tracking-wider">Week 2</div><div class="font-bold text-lg leading-tight text-slate-200 mt-1">Geology in the Wild</div></div>
-            <div data-target="week-3" class="nav-btn bg-slate-800 hover:bg-slate-700 p-3 rounded cursor-pointer border-l-8 border-transparent transition duration-200"><div class="text-xs font-bold text-slate-400 uppercase tracking-wider">Week 3</div><div class="font-bold text-lg leading-tight text-slate-200 mt-1">Dormant Mode</div></div>
-            <div data-target="week-4" class="nav-btn bg-slate-800 hover:bg-slate-700 p-3 rounded cursor-pointer border-l-8 border-transparent transition duration-200"><div class="text-xs font-bold text-slate-400 uppercase tracking-wider">Week 4</div><div class="font-bold text-lg leading-tight text-slate-200 mt-1">Pressure Valve</div></div>
-            <div data-target="week-5" class="nav-btn bg-slate-800 hover:bg-slate-700 p-3 rounded cursor-pointer border-l-8 border-transparent transition duration-200"><div class="text-xs font-bold text-slate-400 uppercase tracking-wider">Week 5</div><div class="font-bold text-lg leading-tight text-slate-200 mt-1">Ring of Fire</div></div>
-            <div data-target="week-6" class="nav-btn bg-slate-800 hover:bg-slate-700 p-3 rounded cursor-pointer border-l-8 border-transparent transition duration-200"><div class="text-xs font-bold text-slate-400 uppercase tracking-wider">Week 6</div><div class="font-bold text-lg leading-tight text-slate-200 mt-1">Deep Ocean Eruption</div></div>
-            <div data-target="week-7" class="nav-btn bg-slate-800 hover:bg-slate-700 p-3 rounded cursor-pointer border-l-8 border-transparent transition duration-200"><div class="text-xs font-bold text-slate-400 uppercase tracking-wider">Week 7</div><div class="font-bold text-lg leading-tight text-slate-200 mt-1">Lava Routing</div></div>
-            <div data-target="week-8" class="nav-btn bg-slate-800 hover:bg-slate-700 p-3 rounded cursor-pointer border-l-8 border-transparent transition duration-200"><div class="text-xs font-bold text-slate-400 uppercase tracking-wider">Week 8</div><div class="font-bold text-lg leading-tight text-slate-200 mt-1">Mt. St. Helens</div></div>
+    <aside class="w-full md:w-64 h-auto md:h-screen bg-slate-800 flex flex-col border-b md:border-r border-slate-900 shadow-2xl z-20 text-white shrink-0">
+        <div class="h-16 md:h-20 flex items-center justify-center bg-slate-900 font-extrabold text-lg md:text-xl uppercase tracking-widest border-b border-slate-950 shadow-md text-orange-400">Op Gup-V</div>
+        <nav class="flex flex-row md:flex-col overflow-x-auto md:overflow-y-auto p-3 md:p-4 space-x-3 md:space-x-0 md:space-y-3 hide-scrollbar">
+            <div data-target="week-1" class="nav-btn shrink-0 w-48 md:w-auto bg-slate-700 p-3 rounded shadow-sm md:border-l-8 md:border-b-0 border-b-4 border-orange-500 cursor-pointer transition duration-200"><div class="text-xs font-bold text-orange-400 uppercase tracking-wider">Week 1</div><div class="font-bold text-base md:text-lg leading-tight text-white mt-1">Magma Chambers</div></div>
+            <div data-target="week-2" class="nav-btn shrink-0 w-48 md:w-auto bg-slate-800 hover:bg-slate-700 p-3 rounded cursor-pointer md:border-l-8 md:border-b-0 border-b-4 border-transparent transition duration-200"><div class="text-xs font-bold text-slate-400 uppercase tracking-wider">Week 2</div><div class="font-bold text-base md:text-lg leading-tight text-slate-200 mt-1">Geology in the Wild</div></div>
+            <div data-target="week-3" class="nav-btn shrink-0 w-48 md:w-auto bg-slate-800 hover:bg-slate-700 p-3 rounded cursor-pointer md:border-l-8 md:border-b-0 border-b-4 border-transparent transition duration-200"><div class="text-xs font-bold text-slate-400 uppercase tracking-wider">Week 3</div><div class="font-bold text-base md:text-lg leading-tight text-slate-200 mt-1">Dormant Mode</div></div>
+            <div data-target="week-4" class="nav-btn shrink-0 w-48 md:w-auto bg-slate-800 hover:bg-slate-700 p-3 rounded cursor-pointer md:border-l-8 md:border-b-0 border-b-4 border-transparent transition duration-200"><div class="text-xs font-bold text-slate-400 uppercase tracking-wider">Week 4</div><div class="font-bold text-base md:text-lg leading-tight text-slate-200 mt-1">Pressure Valve</div></div>
+            <div data-target="week-5" class="nav-btn shrink-0 w-48 md:w-auto bg-slate-800 hover:bg-slate-700 p-3 rounded cursor-pointer md:border-l-8 md:border-b-0 border-b-4 border-transparent transition duration-200"><div class="text-xs font-bold text-slate-400 uppercase tracking-wider">Week 5</div><div class="font-bold text-base md:text-lg leading-tight text-slate-200 mt-1">Ring of Fire</div></div>
+            <div data-target="week-6" class="nav-btn shrink-0 w-48 md:w-auto bg-slate-800 hover:bg-slate-700 p-3 rounded cursor-pointer md:border-l-8 md:border-b-0 border-b-4 border-transparent transition duration-200"><div class="text-xs font-bold text-slate-400 uppercase tracking-wider">Week 6</div><div class="font-bold text-base md:text-lg leading-tight text-slate-200 mt-1">Deep Ocean Eruption</div></div>
+            <div data-target="week-7" class="nav-btn shrink-0 w-48 md:w-auto bg-slate-800 hover:bg-slate-700 p-3 rounded cursor-pointer md:border-l-8 md:border-b-0 border-b-4 border-transparent transition duration-200"><div class="text-xs font-bold text-slate-400 uppercase tracking-wider">Week 7</div><div class="font-bold text-base md:text-lg leading-tight text-slate-200 mt-1">Lava Routing</div></div>
+            <div data-target="week-8" class="nav-btn shrink-0 w-48 md:w-auto bg-slate-800 hover:bg-slate-700 p-3 rounded cursor-pointer md:border-l-8 md:border-b-0 border-b-4 border-transparent transition duration-200"><div class="text-xs font-bold text-slate-400 uppercase tracking-wider">Week 8</div><div class="font-bold text-base md:text-lg leading-tight text-slate-200 mt-1">Mt. St. Helens</div></div>
         </nav>
     </aside>
 
     <main class="flex-1 flex flex-col bg-blue-50 relative overflow-hidden">
-        <header class="h-20 bg-white border-b border-blue-200 flex items-center justify-between px-8 shadow-sm shrink-0 z-10">
-            <h1 class="text-2xl font-black text-blue-900 tracking-wide uppercase"><span class="lang-eng block">Mission Viewport</span><span class="lang-jpn hidden">ミッション・ビューポート</span></h1>
-            <div class="flex items-center p-1 bg-slate-200 rounded-full shadow-inner border border-slate-300 relative">
+        <header class="h-auto md:h-20 py-4 md:py-0 bg-white border-b border-blue-200 flex flex-col sm:flex-row items-center justify-between px-4 md:px-8 shadow-sm shrink-0 z-10 gap-3 sm:gap-0">
+            <h1 class="text-xl md:text-2xl font-black text-blue-900 tracking-wide uppercase text-center sm:text-left">
+                <span class="lang-eng block">Mission Viewport</span>
+                <span class="lang-jpn hidden">ミッション・ビューポート</span>
+            </h1>
+            <div class="flex items-center p-1 bg-slate-200 rounded-full shadow-inner border border-slate-300 relative shrink-0">
                 <div id="lang-slider" class="absolute w-[104px] h-[34px] bg-white rounded-full shadow-sm transition-transform duration-300 ease-in-out transform translate-x-0"></div>
                 <button id="btn-eng" class="relative z-10 px-6 py-1.5 text-blue-900 text-sm font-black rounded-full cursor-pointer uppercase tracking-wider w-[104px] text-center transition-colors duration-300">ENG</button>
                 <button id="btn-jpn" class="relative z-10 px-6 py-1.5 text-slate-500 text-sm font-bold cursor-pointer uppercase tracking-wider w-[104px] text-center transition-colors duration-300 hover:text-blue-900">日本語</button>
             </div>
         </header>
 
-        <div class="flex-1 overflow-y-auto p-10 scroll-smooth">
+        <div class="flex-1 overflow-y-auto p-4 sm:p-6 md:p-10 scroll-smooth">
             <div class="w-full max-w-5xl mx-auto pb-20">
                 
                 <div id="week-1" class="week-content block space-y-10">
-                    <div class="bg-white p-8 rounded-2xl border-4 border-blue-100 shadow-md">
-                        <h2 class="text-4xl font-black text-blue-900 uppercase tracking-tight"><span class="lang-eng block">Week 1: Magma Chambers</span><span class="lang-jpn hidden">第1週: マグマだまり</span></h2>
-                        <p class="text-blue-600 mt-2 text-lg font-medium">Mission Code: Chassis & Plumbing Test | Focus: Interior mechanical structures, magma vs. lava, and pressure.</p>
+                    <div class="bg-white p-6 md:p-8 rounded-2xl border-4 border-blue-100 shadow-md">
+                        <h2 class="text-3xl md:text-4xl font-black text-blue-900 uppercase tracking-tight"><span class="lang-eng block">Week 1: Magma Chambers</span><span class="lang-jpn hidden">第1週: マグマだまり</span></h2>
+                        <p class="text-blue-600 mt-2 text-base md:text-lg font-medium">Mission Code: Chassis & Plumbing Test | Focus: Interior mechanical structures, magma vs. lava, and pressure.</p>
                     </div>
 
-                    <div class="flex items-start space-x-6">
+                    <div class="flex flex-col md:flex-row items-center md:items-start gap-4 md:gap-0 md:space-x-6">
                         <div class="w-20 h-20 bg-blue-200 rounded-full flex items-center justify-center border-4 border-white shadow-md shrink-0 overflow-hidden"><img src="Barnacles_vector_profile_29.webp" class="w-full h-full object-cover"></div>
-                        <div class="bg-white p-6 rounded-2xl rounded-tl-none border-2 border-slate-200 shadow-md relative flex-1">
-                            <div class="absolute top-0 left-[-10px] w-0 h-0 border-t-[15px] border-t-white border-l-[15px] border-l-transparent"></div>
+                        <div class="bg-white p-6 rounded-2xl md:rounded-tl-none border-2 border-slate-200 shadow-md relative flex-1 w-full">
+                            <div class="hidden md:block absolute top-0 left-[-10px] w-0 h-0 border-t-[15px] border-t-white border-l-[15px] border-l-transparent"></div>
                             <h3 class="font-black text-blue-900 uppercase tracking-wider mb-4 text-lg"><span class="lang-eng block">Captain's Briefing</span><span class="lang-jpn hidden">キャプテンの指令</span></h3>
-                            <div class="lang-eng block"><p class="text-slate-700 font-medium text-lg leading-relaxed">"Cadet Ari, report to the launch bay! Tweak and Captain Barnacles need your engineering brain. Kwazii wants to drive the new Gup-V right into a volcano, but Tweak is worried the Gup will get stuck in the narrow pipes or melt in the heat. Your mission today is to build a 3D blueprint of a volcano's interior plumbing so Tweak knows exactly what the Gup is driving into!"</p></div>
-                            <div class="lang-jpn hidden"><p class="text-slate-700 font-medium text-lg leading-relaxed">「新隊員、発進準備！キャプテン・バーナクルとトゥイークから緊急指令だ。クワジーが新しいガップVで火山に飛び込もうとしているが、トゥイークは『マグマの通り道が狭すぎてガップが挟まっちゃうよ！』と心配している。今日の任務は、火山の内部がどうなっているか立体の設計図を作って調査することだ。ガップVが無事に進めるルートを見つけ出すぞ！」</p></div>
+                            <div class="lang-eng block"><p class="text-slate-700 font-medium text-base md:text-lg leading-relaxed">"Cadet Ari, report to the launch bay! Tweak and Captain Barnacles need your engineering brain. Kwazii wants to drive the new Gup-V right into a volcano, but Tweak is worried the Gup will get stuck in the narrow pipes or melt in the heat. Your mission today is to build a 3D blueprint of a volcano's interior plumbing so Tweak knows exactly what the Gup is driving into!"</p></div>
+                            <div class="lang-jpn hidden"><p class="text-slate-700 font-medium text-base md:text-lg leading-relaxed">「新隊員、発進準備！キャプテン・バーナクルとトゥイークから緊急指令だ。クワジーが新しいガップVで火山に飛び込もうとしているが、トゥイークは『マグマの通り道が狭すぎてガップが挟まっちゃうよ！』と心配している。今日の任務は、火山の内部がどうなっているか立体の設計図を作って調査することだ。ガップVが無事に進めるルートを見つけ出すぞ！」</p></div>
                         </div>
                     </div>
 
-                    <div class="bg-blue-600 p-8 rounded-2xl shadow-md text-white border-4 border-blue-500">
+                    <div class="bg-blue-600 p-6 md:p-8 rounded-2xl shadow-md text-white border-4 border-blue-500">
                         <h3 class="text-xl font-black uppercase tracking-wider mb-6 flex items-center"><span class="mr-2">💡</span><span class="lang-eng block">Core Concepts</span><span class="lang-jpn hidden">重要コンセプト</span></h3>
                         <div class="lang-eng block space-y-4">
-                            <p class="text-lg"><span class="font-bold text-white border-b-2 border-orange-400">Magma Chamber:</span> The underground storage tank where hot, melted rock waits under immense pressure.</p>
-                            <p class="text-lg"><span class="font-bold text-white border-b-2 border-orange-400">Central Vent / Pipe:</span> The main elevator shaft or pipe that the magma climbs up when the pressure gets too high.</p>
-                            <p class="text-lg"><span class="font-bold text-white border-b-2 border-orange-400">Crater / Exit Vent:</span> The exit door at the very top where the magma finally escapes and turns into lava.</p>
+                            <p class="text-base md:text-lg"><span class="font-bold text-white border-b-2 border-orange-400">Magma Chamber:</span> The underground storage tank where hot, melted rock waits under immense pressure.</p>
+                            <p class="text-base md:text-lg"><span class="font-bold text-white border-b-2 border-orange-400">Central Vent / Pipe:</span> The main elevator shaft or pipe that the magma climbs up when the pressure gets too high.</p>
+                            <p class="text-base md:text-lg"><span class="font-bold text-white border-b-2 border-orange-400">Crater / Exit Vent:</span> The exit door at the very top where the magma finally escapes and turns into lava.</p>
                         </div>
                         <div class="lang-jpn hidden space-y-4">
-                            <p class="text-lg"><span class="font-bold text-white border-b-2 border-orange-400">マグマだまり:</span> 地下深くにある、ドロドロに溶けた熱い岩（マグマ）がものすごい圧力で待機しているタンクのような場所。</p>
-                            <p class="text-lg"><span class="font-bold text-white border-b-2 border-orange-400">火道 (パイプ):</span> 圧力が高くなった時に、マグマが上に向かって登っていくメインのエレベーターのような通り道。</p>
-                            <p class="text-lg"><span class="font-bold text-white border-b-2 border-orange-400">火口 (出口):</span> マグマが最終的に外に逃げ出し、溶岩（溶岩）に変わる一番上の出口。</p>
+                            <p class="text-base md:text-lg"><span class="font-bold text-white border-b-2 border-orange-400">マグマだまり:</span> 地下深くにある、ドロドロに溶けた熱い岩（マグマ）がものすごい圧力で待機しているタンクのような場所。</p>
+                            <p class="text-base md:text-lg"><span class="font-bold text-white border-b-2 border-orange-400">火道 (パイプ):</span> 圧力が高くなった時に、マグマが上に向かって登っていくメインのエレベーターのような通り道。</p>
+                            <p class="text-base md:text-lg"><span class="font-bold text-white border-b-2 border-orange-400">火口 (出口):</span> マグマが最終的に外に逃げ出し、溶岩（溶岩）に変わる一番上の出口。</p>
                         </div>
                     </div>
 
@@ -74,32 +79,32 @@
                         <div class="bg-white p-6 rounded-2xl border-2 border-slate-200 shadow-sm col-span-1">
                             <h3 class="text-xl font-black text-blue-900 uppercase tracking-wider mb-6"><span class="lang-eng block">Materials</span><span class="lang-jpn hidden">必要なもの</span></h3>
                             <ul class="space-y-4 text-slate-700 font-bold text-sm">
-                                <li class="flex items-start"><input type="checkbox" id="mat-1-w1" class="mt-1 w-5 h-5 mr-3 accent-orange-500 cursor-pointer"> <label for="mat-1-w1" class="cursor-pointer"><span class="lang-eng block">1 Red/Orange Playdough tub</span><span class="lang-jpn hidden">赤/オレンジの粘土 1つ</span></label></li>
-                                <li class="flex items-start"><input type="checkbox" id="mat-2-w1" class="mt-1 w-5 h-5 mr-3 accent-orange-500 cursor-pointer"> <label for="mat-2-w1" class="cursor-pointer"><span class="lang-eng block">2 Brown/Grey Playdough tubs</span><span class="lang-jpn hidden">茶色/グレーの粘土 2つ</span></label></li>
-                                <li class="flex items-start"><input type="checkbox" id="mat-3-w1" class="mt-1 w-5 h-5 mr-3 accent-orange-500 cursor-pointer"> <label for="mat-3-w1" class="cursor-pointer"><span class="lang-eng block">Plate (Base)</span><span class="lang-jpn hidden">お皿 (土台用)</span></label></li>
-                                <li class="flex items-start"><input type="checkbox" id="mat-4-w1" class="mt-1 w-5 h-5 mr-3 accent-orange-500 cursor-pointer"> <label for="mat-4-w1" class="cursor-pointer"><span class="lang-eng block">Plastic butter knife</span><span class="lang-jpn hidden">プラスチックのナイフ</span></label></li>
+                                <li class="flex items-start"><input type="checkbox" id="mat-1-w1" class="material-checkbox mt-1 w-5 h-5 mr-3 accent-orange-500 cursor-pointer"> <label for="mat-1-w1" class="cursor-pointer"><span class="lang-eng block">1 Red/Orange Playdough tub</span><span class="lang-jpn hidden">赤/オレンジの粘土 1つ</span></label></li>
+                                <li class="flex items-start"><input type="checkbox" id="mat-2-w1" class="material-checkbox mt-1 w-5 h-5 mr-3 accent-orange-500 cursor-pointer"> <label for="mat-2-w1" class="cursor-pointer"><span class="lang-eng block">2 Brown/Grey Playdough tubs</span><span class="lang-jpn hidden">茶色/グレーの粘土 2つ</span></label></li>
+                                <li class="flex items-start"><input type="checkbox" id="mat-3-w1" class="material-checkbox mt-1 w-5 h-5 mr-3 accent-orange-500 cursor-pointer"> <label for="mat-3-w1" class="cursor-pointer"><span class="lang-eng block">Plate (Base)</span><span class="lang-jpn hidden">お皿 (土台用)</span></label></li>
+                                <li class="flex items-start"><input type="checkbox" id="mat-4-w1" class="material-checkbox mt-1 w-5 h-5 mr-3 accent-orange-500 cursor-pointer"> <label for="mat-4-w1" class="cursor-pointer"><span class="lang-eng block">Plastic butter knife</span><span class="lang-jpn hidden">プラスチックのナイフ</span></label></li>
                             </ul>
                         </div>
-                        <div class="bg-white p-8 rounded-2xl border-2 border-slate-200 shadow-sm col-span-2 flex flex-col justify-between">
+                        <div class="bg-white p-6 md:p-8 rounded-2xl border-2 border-slate-200 shadow-sm col-span-1 lg:col-span-2 flex flex-col justify-between">
                             <div>
                                 <h3 class="text-xl font-black text-blue-900 uppercase tracking-wider mb-6"><span class="lang-eng block">The Mission: Playdough Cross-Section</span><span class="lang-jpn hidden">ミッション: 粘土で断面図作り</span></h3>
-                                <div class="lang-eng block space-y-6 text-slate-700 font-medium text-[1.05rem] leading-snug">
-                                    <div><p><span class="font-bold text-blue-900">Step 1 (Magma Chamber):</span> Roll a big red/orange ball and flatten it on a plate.</p><div class="mt-3 text-slate-600 bg-slate-50 p-3 rounded border border-slate-200 flex items-start space-x-3"><div class="w-10 h-10 rounded-full overflow-hidden shrink-0 border-2 border-green-200"><img src="Screenshot 2026-06-17 125507.png" class="w-full h-full object-cover"></div><div><span class="block font-bold text-green-700 text-xs uppercase tracking-wider mb-1">Tweak's Engineering Note</span><span class="italic font-bold">"This is the fuel tank where all the hot magma waits!"</span></div></div></div>
-                                    <div><p><span class="font-bold text-blue-900">Step 2 (The Pipe):</span> Roll a long, thick red playdough "snake" standing straight up from the center of the base.</p><div class="mt-3 text-slate-600 bg-slate-50 p-3 rounded border border-slate-200 flex items-start space-x-3"><div class="w-10 h-10 rounded-full overflow-hidden shrink-0 border-2 border-green-200"><img src="Screenshot 2026-06-17 125507.png" class="w-full h-full object-cover"></div><div><span class="block font-bold text-green-700 text-xs uppercase tracking-wider mb-1">Tweak's Engineering Note</span><span class="italic font-bold">"I need to know exactly how wide this is so the Gup doesn't get stuck!"</span></div></div></div>
+                                <div class="lang-eng block space-y-6 text-slate-700 font-medium text-base md:text-[1.05rem] leading-snug">
+                                    <div><p><span class="font-bold text-blue-900">Step 1 (Magma Chamber):</span> Roll a big red/orange ball and flatten it on a plate.</p><div class="mt-3 text-slate-600 bg-slate-50 p-3 rounded border border-slate-200 flex items-start space-x-3"><div class="w-10 h-10 rounded-full overflow-hidden shrink-0 border-2 border-green-200"><img src="Screenshot 2026-06-17 125507.png" class="w-full h-full object-cover" alt="Tweak"></div><div><span class="block font-bold text-green-700 text-xs uppercase tracking-wider mb-1">Tweak's Engineering Note</span><span class="italic font-bold">"This is the fuel tank where all the hot magma waits!"</span></div></div></div>
+                                    <div><p><span class="font-bold text-blue-900">Step 2 (The Pipe):</span> Roll a long, thick red playdough "snake" standing straight up from the center of the base.</p><div class="mt-3 text-slate-600 bg-slate-50 p-3 rounded border border-slate-200 flex items-start space-x-3"><div class="w-10 h-10 rounded-full overflow-hidden shrink-0 border-2 border-green-200"><img src="Screenshot 2026-06-17 125507.png" class="w-full h-full object-cover" alt="Tweak"></div><div><span class="block font-bold text-green-700 text-xs uppercase tracking-wider mb-1">Tweak's Engineering Note</span><span class="italic font-bold">"I need to know exactly how wide this is so the Gup doesn't get stuck!"</span></div></div></div>
                                     <p><span class="font-bold text-blue-900">Step 3 (Building the Crust):</span> Use brown/grey playdough to build the mountain structure around the red pipe, leaving the peak open.</p>
                                     <p><span class="font-bold text-blue-900">Step 4 (The Reveal):</span> Use a plastic butter knife to slice the volcano directly down the middle.</p>
                                 </div>
-                                <div class="lang-jpn hidden space-y-6 text-slate-700 font-medium text-[1.05rem] leading-snug">
-                                    <div><p><span class="font-bold text-blue-900">ステップ 1 (マグマだまり):</span> 赤かオレンジの粘土を丸めて、お皿の上で平らに潰します。</p><div class="mt-3 text-slate-600 bg-slate-50 p-3 rounded border border-slate-200 flex items-start space-x-3"><div class="w-10 h-10 rounded-full overflow-hidden shrink-0 border-2 border-green-200"><img src="Screenshot 2026-06-17 125507.png" class="w-full h-full object-cover"></div><div><span class="block font-bold text-green-700 text-xs uppercase tracking-wider mb-1">トゥイークのメモ</span><span class="italic font-bold">「これが熱いマグマが待機する燃料タンクだよ！」</span></div></div></div>
-                                    <div><p><span class="font-bold text-blue-900">ステップ 2 (火道):</span> 赤い粘土で太くて長いヘビを作り、土台の真ん中にまっすぐ立てます。</p><div class="mt-3 text-slate-600 bg-slate-50 p-3 rounded border border-slate-200 flex items-start space-x-3"><div class="w-10 h-10 rounded-full overflow-hidden shrink-0 border-2 border-green-200"><img src="Screenshot 2026-06-17 125507.png" class="w-full h-full object-cover"></div><div><span class="block font-bold text-green-700 text-xs uppercase tracking-wider mb-1">トゥイークのメモ</span><span class="italic font-bold">「ガップが挟まらないように、幅がどれくらいか正確に知りたいんだ！」</span></div></div></div>
+                                <div class="lang-jpn hidden space-y-6 text-slate-700 font-medium text-base md:text-[1.05rem] leading-snug">
+                                    <div><p><span class="font-bold text-blue-900">ステップ 1 (マグマだまり):</span> 赤かオレンジの粘土を丸めて、お皿の上で平らに潰します。</p><div class="mt-3 text-slate-600 bg-slate-50 p-3 rounded border border-slate-200 flex items-start space-x-3"><div class="w-10 h-10 rounded-full overflow-hidden shrink-0 border-2 border-green-200"><img src="Screenshot 2026-06-17 125507.png" class="w-full h-full object-cover" alt="Tweak"></div><div><span class="block font-bold text-green-700 text-xs uppercase tracking-wider mb-1">トゥイークのメモ</span><span class="italic font-bold">「これが熱いマグマが待機する燃料タンクだよ！」</span></div></div></div>
+                                    <div><p><span class="font-bold text-blue-900">ステップ 2 (火道):</span> 赤い粘土で太くて長いヘビを作り、土台の真ん中にまっすぐ立てます。</p><div class="mt-3 text-slate-600 bg-slate-50 p-3 rounded border border-slate-200 flex items-start space-x-3"><div class="w-10 h-10 rounded-full overflow-hidden shrink-0 border-2 border-green-200"><img src="Screenshot 2026-06-17 125507.png" class="w-full h-full object-cover" alt="Tweak"></div><div><span class="block font-bold text-green-700 text-xs uppercase tracking-wider mb-1">トゥイークのメモ</span><span class="italic font-bold">「ガップが挟まらないように、幅がどれくらいか正確に知りたいんだ！」</span></div></div></div>
                                     <p><span class="font-bold text-blue-900">ステップ 3 (地殻の建設):</span> 茶色やグレーの粘土を使って赤いパイプの周りに山の形を作ります。頂上は開けたままにしてね。</p>
                                     <p><span class="font-bold text-blue-900">ステップ 4 (断面の確認):</span> プラスチックのナイフを使って、火山を真っ二つに切り裂いて中身を確認します。</p>
                                 </div>
                             </div>
                             <div class="mt-8 bg-blue-50 border-l-4 border-orange-400 p-5 rounded-r-xl">
                                 <h3 class="text-lg font-black text-blue-900 uppercase tracking-wider mb-2 flex items-center"><span class="text-xl mr-2">👧🏻</span><span class="lang-eng block">Mia's Target: Base Camp Builder</span><span class="lang-jpn hidden">ミアの任務: ベースキャンプ建設</span></h3>
-                                <p class="lang-eng block text-blue-800 font-medium">Give Mia her own plate, brown/grey playdough, and red bits. Her job is to build her own "mini-mountain" next to Ari’s lab.</p>
-                                <p class="lang-jpn hidden text-blue-800 font-medium">ミア専用のお皿と粘土を渡します。彼女の仕事は、アリの研究所の隣に自分だけの「ミニマウンテン」を作ることです。</p>
+                                <p class="lang-eng block text-blue-800 font-medium text-sm md:text-base">Give Mia her own plate, brown/grey playdough, and red bits. Her job is to build her own "mini-mountain" next to Ari’s lab.</p>
+                                <p class="lang-jpn hidden text-blue-800 font-medium text-sm md:text-base">ミア専用のお皿と粘土を渡します。彼女の仕事は、アリの研究所の隣に自分だけの「ミニマウンテン」を作ることです。</p>
                             </div>
                         </div>
                     </div>
@@ -110,7 +115,7 @@
                             <div class="lang-eng block"><h4 class="font-bold text-orange-800 mb-1">The Drawing</h4><p class="text-orange-900 font-medium text-sm">Ari will look at his open playdough model and draw the mountain outline with its internal chamber and pipe into his journal.</p></div>
                             <div class="lang-jpn hidden"><h4 class="font-bold text-orange-800 mb-1">お絵かき</h4><p class="text-orange-900 font-medium text-sm">切った粘土モデルを見て、火山の外形と内側のパイプやマグマだまりをノートに描きます。</p></div>
                             
-                            <div class="border-l-2 border-orange-200 pl-6"><h4 class="font-bold text-orange-800 mb-1">The Labeling Targets</h4><p class="lang-eng block text-orange-900 font-bold text-lg"><span class="text-sm font-black mr-2 text-orange-700">ENG:</span> Magma Chamber, Pipe, Volcano</p><p class="lang-jpn hidden text-orange-900 font-bold text-lg"><span class="text-sm font-black mr-2 text-orange-700">JPN:</span> マグマだまり, 火道, 火山</p></div>
+                            <div class="border-t-2 md:border-t-0 md:border-l-2 border-orange-200 pt-4 md:pt-0 md:pl-6"><h4 class="font-bold text-orange-800 mb-1">The Labeling Targets</h4><p class="lang-eng block text-orange-900 font-bold text-lg"><span class="text-sm font-black mr-2 text-orange-700">ENG:</span> Magma Chamber, Pipe, Volcano</p><p class="lang-jpn hidden text-orange-900 font-bold text-lg"><span class="text-sm font-black mr-2 text-orange-700">JPN:</span> マグマだまり, 火道, 火山</p></div>
                         </div>
                     </div>
 
@@ -125,11 +130,11 @@
                     </div>
 
                     <div class="mt-12 pt-8 border-t-4 border-slate-300 border-dashed">
-                        <h3 class="text-2xl font-black text-slate-400 uppercase tracking-wider mb-6 flex items-center"><span class="mr-3">🔒</span><span class="lang-eng block">Captain's Log (Parent's Guide)</span><span class="lang-jpn hidden">キャプテンの記録（保護者向け）</span></h3>
+                        <h3 class="text-xl md:text-2xl font-black text-slate-400 uppercase tracking-wider mb-6 flex items-center"><span class="mr-3">🔒</span><span class="lang-eng block">Captain's Log (Parent's Guide)</span><span class="lang-jpn hidden">キャプテンの記録（保護者向け）</span></h3>
                         <div class="space-y-4">
                             <details class="group bg-slate-200 rounded-xl overflow-hidden border-2 border-slate-300">
-                                <summary class="p-5 font-black text-slate-600 uppercase tracking-wider cursor-pointer hover:bg-slate-300 flex justify-between items-center transition-colors"><span class="lang-eng block">Cheat Sheet Q&A</span><span class="lang-jpn hidden">よくある質問と答え</span><span class="text-xl group-open:rotate-180 transition-transform">▼</span></summary>
-                                <div class="p-6 bg-white border-t-2 border-slate-300 text-slate-700 font-medium space-y-6">
+                                <summary class="p-4 md:p-5 font-black text-slate-600 text-sm md:text-base uppercase tracking-wider cursor-pointer hover:bg-slate-300 flex justify-between items-center transition-colors"><span class="lang-eng block">Cheat Sheet Q&A</span><span class="lang-jpn hidden">よくある質問と答え</span><span class="text-xl group-open:rotate-180 transition-transform">▼</span></summary>
+                                <div class="p-4 md:p-6 bg-white border-t-2 border-slate-300 text-slate-700 font-medium space-y-6 text-sm md:text-base">
                                     <div class="lang-eng block">
                                         <p class="font-bold text-blue-900 mb-1">Ari: "What is the difference between magma and lava?"</p><p class="text-slate-600 bg-slate-50 p-3 rounded border border-slate-200"><span class="font-bold text-orange-600">Your Answer:</span> "Location! It is exactly the same stuff. Trapped underground = Magma. The second it touches the outside air = Lava."</p>
                                     </div>
@@ -155,30 +160,30 @@
                 </div>
 
                 <div id="week-2" class="week-content hidden space-y-10">
-                    <div class="bg-white p-8 rounded-2xl border-4 border-blue-100 shadow-md">
-                        <h2 class="text-4xl font-black text-blue-900 uppercase tracking-tight"><span class="lang-eng block">Week 2: Geology in the Wild</span><span class="lang-jpn hidden">第2週: 大自然の地質学</span></h2>
-                        <p class="text-blue-600 mt-2 text-lg font-medium">Mission Code: Outdoor Extraction | Focus: Igneous rock cooling speeds, pumice vs. basalt.</p>
+                    <div class="bg-white p-6 md:p-8 rounded-2xl border-4 border-blue-100 shadow-md">
+                        <h2 class="text-3xl md:text-4xl font-black text-blue-900 uppercase tracking-tight"><span class="lang-eng block">Week 2: Geology in the Wild</span><span class="lang-jpn hidden">第2週: 大自然の地質学</span></h2>
+                        <p class="text-blue-600 mt-2 text-base md:text-lg font-medium">Mission Code: Outdoor Extraction | Focus: Igneous rock cooling speeds, pumice vs. basalt.</p>
                     </div>
 
-                    <div class="flex items-start space-x-6">
+                    <div class="flex flex-col md:flex-row items-center md:items-start gap-4 md:gap-0 md:space-x-6">
                         <div class="w-20 h-20 bg-blue-200 rounded-full flex items-center justify-center border-4 border-white shadow-md shrink-0 text-3xl">🐱‍👤</div>
-                        <div class="bg-white p-6 rounded-2xl rounded-tl-none border-2 border-slate-200 shadow-md relative flex-1">
-                            <div class="absolute top-0 left-[-10px] w-0 h-0 border-t-[15px] border-t-white border-l-[15px] border-l-transparent"></div>
+                        <div class="bg-white p-6 rounded-2xl md:rounded-tl-none border-2 border-slate-200 shadow-md relative flex-1 w-full">
+                            <div class="hidden md:block absolute top-0 left-[-10px] w-0 h-0 border-t-[15px] border-t-white border-l-[15px] border-l-transparent"></div>
                             <h3 class="font-black text-blue-900 uppercase tracking-wider mb-4 text-lg"><span class="lang-eng block">Captain's Briefing</span><span class="lang-jpn hidden">キャプテンの指令</span></h3>
-                            <div class="lang-eng block"><p class="text-slate-700 font-medium text-lg leading-relaxed">"Yoweee! Cadet Ari, Kwazii here! I hear you're heading into the wild! Shiver me timbers, volcanic rocks are like hidden pirate treasure. Tweak needs to know if they will damage the Gup-V's heavy tires. Scout the campsite and extract 3 distinct types of rocks!"</p></div>
-                            <div class="lang-jpn hidden"><p class="text-slate-700 font-medium text-lg leading-relaxed">「ヤーウィー！アリ新隊員、クワジーだ！大自然に向かっているそうだな！火山岩は隠された海賊の宝物みたいなもんだ。トゥイークがガップVのタイヤを傷つけないか知りたがっている。キャンプ地を偵察して、3種類の違う石を発掘してくれ！」</p></div>
+                            <div class="lang-eng block"><p class="text-slate-700 font-medium text-base md:text-lg leading-relaxed">"Yoweee! Cadet Ari, Kwazii here! I hear you're heading into the wild! Shiver me timbers, volcanic rocks are like hidden pirate treasure. Tweak needs to know if they will damage the Gup-V's heavy tires. Scout the campsite and extract 3 distinct types of rocks!"</p></div>
+                            <div class="lang-jpn hidden"><p class="text-slate-700 font-medium text-base md:text-lg leading-relaxed">「ヤーウィー！アリ新隊員、クワジーだ！大自然に向かっているそうだな！火山岩は隠された海賊の宝物みたいなもんだ。トゥイークがガップVのタイヤを傷つけないか知りたがっている。キャンプ地を偵察して、3種類の違う石を発掘してくれ！」</p></div>
                         </div>
                     </div>
 
-                    <div class="bg-blue-600 p-8 rounded-2xl shadow-md text-white border-4 border-blue-500">
+                    <div class="bg-blue-600 p-6 md:p-8 rounded-2xl shadow-md text-white border-4 border-blue-500">
                         <h3 class="text-xl font-black uppercase tracking-wider mb-6 flex items-center"><span class="mr-2">💡</span><span class="lang-eng block">Core Concepts</span><span class="lang-jpn hidden">重要コンセプト</span></h3>
                         <div class="lang-eng block space-y-4">
-                            <p class="text-lg"><span class="font-bold text-white border-b-2 border-orange-400">Igneous Rocks:</span> Any rock created by a volcano.</p>
-                            <p class="text-lg"><span class="font-bold text-white border-b-2 border-orange-400">Cooling Speeds:</span> How the rock looks depends entirely on how fast the lava cooled. If it cooled slowly inside the earth, it forms dense, heavy, dark rocks (Basalt). If it was blasted into the chilly air and cooled instantly, it traps gas bubbles inside, creating a sponge-like rock (Pumice).</p>
+                            <p class="text-base md:text-lg"><span class="font-bold text-white border-b-2 border-orange-400">Igneous Rocks:</span> Any rock created by a volcano.</p>
+                            <p class="text-base md:text-lg"><span class="font-bold text-white border-b-2 border-orange-400">Cooling Speeds:</span> How the rock looks depends entirely on how fast the lava cooled. If it cooled slowly inside the earth, it forms dense, heavy, dark rocks (Basalt). If it was blasted into the chilly air and cooled instantly, it traps gas bubbles inside, creating a sponge-like rock (Pumice).</p>
                         </div>
                         <div class="lang-jpn hidden space-y-4">
-                            <p class="text-lg"><span class="font-bold text-white border-b-2 border-orange-400">火成岩 (Igneous Rocks):</span> 火山から生まれたすべての石のこと。</p>
-                            <p class="text-lg"><span class="font-bold text-white border-b-2 border-orange-400">冷却スピード:</span> 石の見た目は、溶岩がどれだけ早く冷えたかによって完全に決まります。地球の中でゆっくり冷えると、重くて黒い石（玄武岩）になります。冷たい空気に吹き飛ばされて一瞬で冷えると、中にガスの泡が閉じ込められ、スポンジのような石（軽石）になります。</p>
+                            <p class="text-base md:text-lg"><span class="font-bold text-white border-b-2 border-orange-400">火成岩 (Igneous Rocks):</span> 火山から生まれたすべての石のこと。</p>
+                            <p class="text-base md:text-lg"><span class="font-bold text-white border-b-2 border-orange-400">冷却スピード:</span> 石の見た目は、溶岩がどれだけ早く冷えたかによって完全に決まります。地球の中でゆっくり冷えると、重くて黒い石（玄武岩）になります。冷たい空気に吹き飛ばされて一瞬で冷えると、中にガスの泡が閉じ込められ、スポンジのような石（軽石）になります。</p>
                         </div>
                     </div>
 
@@ -186,26 +191,26 @@
                         <div class="bg-white p-6 rounded-2xl border-2 border-slate-200 shadow-sm col-span-1">
                             <h3 class="text-xl font-black text-blue-900 uppercase tracking-wider mb-6"><span class="lang-eng block">Materials</span><span class="lang-jpn hidden">必要なもの</span></h3>
                             <ul class="space-y-4 text-slate-700 font-bold text-sm">
-                                <li class="flex items-start"><input type="checkbox" id="mat-1-w2" class="mt-1 w-5 h-5 mr-3 accent-orange-500 cursor-pointer"> <label for="mat-1-w2" class="cursor-pointer"><span class="lang-eng block">Bucket or bag for extraction</span><span class="lang-jpn hidden">発掘用のバケツや袋</span></label></li>
-                                <li class="flex items-start"><input type="checkbox" id="mat-2-w2" class="mt-1 w-5 h-5 mr-3 accent-orange-500 cursor-pointer"> <label for="mat-2-w2" class="cursor-pointer"><span class="lang-eng block">A campsite / outdoor space</span><span class="lang-jpn hidden">キャンプ場 / 外の公園</span></label></li>
+                                <li class="flex items-start"><input type="checkbox" id="mat-1-w2" class="material-checkbox mt-1 w-5 h-5 mr-3 accent-orange-500 cursor-pointer"> <label for="mat-1-w2" class="cursor-pointer"><span class="lang-eng block">Bucket or bag for extraction</span><span class="lang-jpn hidden">発掘用のバケツや袋</span></label></li>
+                                <li class="flex items-start"><input type="checkbox" id="mat-2-w2" class="material-checkbox mt-1 w-5 h-5 mr-3 accent-orange-500 cursor-pointer"> <label for="mat-2-w2" class="cursor-pointer"><span class="lang-eng block">A campsite / outdoor space</span><span class="lang-jpn hidden">キャンプ場 / 外の公園</span></label></li>
                             </ul>
                         </div>
-                        <div class="bg-white p-8 rounded-2xl border-2 border-slate-200 shadow-sm col-span-2 flex flex-col justify-between">
+                        <div class="bg-white p-6 md:p-8 rounded-2xl border-2 border-slate-200 shadow-sm col-span-1 lg:col-span-2 flex flex-col justify-between">
                             <div>
                                 <h3 class="text-xl font-black text-blue-900 uppercase tracking-wider mb-6"><span class="lang-eng block">The Mission: Campsite Rock Hunt</span><span class="lang-jpn hidden">ミッション: キャンプ場で石探し</span></h3>
-                                <div class="lang-eng block space-y-6 text-slate-700 font-medium text-[1.05rem] leading-snug">
+                                <div class="lang-eng block space-y-6 text-slate-700 font-medium text-base md:text-[1.05rem] leading-snug">
                                     <p><span class="font-bold text-blue-900">Step 1 (Extraction):</span> While camping, Ari's single focus is to track down and extract 3 distinct types of rocks.</p>
                                     <p><span class="font-bold text-blue-900">Step 2 (Identification):</span> Look out for highly porous stones (pumice with frozen gas bubbles), dark, heavy volcanic basalt fragments, or smooth river stones.</p>
                                 </div>
-                                <div class="lang-jpn hidden space-y-6 text-slate-700 font-medium text-[1.05rem] leading-snug">
+                                <div class="lang-jpn hidden space-y-6 text-slate-700 font-medium text-base md:text-[1.05rem] leading-snug">
                                     <p><span class="font-bold text-blue-900">ステップ 1 (発掘):</span> キャンプ中、アリは3種類のまったく違う形の石を探し出して採取します。</p>
                                     <p><span class="font-bold text-blue-900">ステップ 2 (分析):</span> 穴がたくさん空いた石（ガスの泡が凍った軽石）、暗くて重い火山の石（玄武岩）、またはツルツルした川の石を見つけてみよう。</p>
                                 </div>
                             </div>
                             <div class="mt-8 bg-blue-50 border-l-4 border-orange-400 p-5 rounded-r-xl">
                                 <h3 class="text-lg font-black text-blue-900 uppercase tracking-wider mb-2 flex items-center"><span class="text-xl mr-2">👧🏻</span><span class="lang-eng block">Mia's Target: Payload Specialist</span><span class="lang-jpn hidden">ミアの任務: 発掘スペシャリスト</span></h3>
-                                <p class="lang-eng block text-blue-800 font-medium">Mia gets a bucket. Her job is to collect any rocks she finds and sort them by size or color next to Ari's inspection station.</p>
-                                <p class="lang-jpn hidden text-blue-800 font-medium">ミアにバケツを渡します。見つけた石を全部集めて、アリの検査ステーションの横で大きさや色ごとに分類するのが彼女の仕事です。</p>
+                                <p class="lang-eng block text-blue-800 font-medium text-sm md:text-base">Mia gets a bucket. Her job is to collect any rocks she finds and sort them by size or color next to Ari's inspection station.</p>
+                                <p class="lang-jpn hidden text-blue-800 font-medium text-sm md:text-base">ミアにバケツを渡します。見つけた石を全部集めて、アリの検査ステーションの横で大きさや色ごとに分類するのが彼女の仕事です。</p>
                             </div>
                         </div>
                     </div>
@@ -216,7 +221,7 @@
                             <div class="lang-eng block"><h4 class="font-bold text-orange-800 mb-1">The Drawing</h4><p class="text-orange-900 font-medium text-sm">Draw the collected rocks in the journal and color their specific textures (putting dots for pumice holes, dark coloring for basalt).</p></div>
                             <div class="lang-jpn hidden"><h4 class="font-bold text-orange-800 mb-1">お絵かき</h4><p class="text-orange-900 font-medium text-sm">集めた石をノートに描き、それぞれの模様（軽石には点々、玄武岩には黒い色）を塗ります。</p></div>
                             
-                            <div class="border-l-2 border-orange-200 pl-6"><h4 class="font-bold text-orange-800 mb-1">The Labeling Targets</h4><p class="lang-eng block text-orange-900 font-bold text-lg"><span class="text-sm font-black mr-2 text-orange-700">ENG:</span> Rock, Pumice, Basalt</p><p class="lang-jpn hidden text-orange-900 font-bold text-lg"><span class="text-sm font-black mr-2 text-orange-700">JPN:</span> 石, 軽石</p></div>
+                            <div class="border-t-2 md:border-t-0 md:border-l-2 border-orange-200 pt-4 md:pt-0 md:pl-6"><h4 class="font-bold text-orange-800 mb-1">The Labeling Targets</h4><p class="lang-eng block text-orange-900 font-bold text-lg"><span class="text-sm font-black mr-2 text-orange-700">ENG:</span> Rock, Pumice, Basalt</p><p class="lang-jpn hidden text-orange-900 font-bold text-lg"><span class="text-sm font-black mr-2 text-orange-700">JPN:</span> 石, 軽石</p></div>
                         </div>
                     </div>
 
@@ -231,11 +236,11 @@
                     </div>
 
                     <div class="mt-12 pt-8 border-t-4 border-slate-300 border-dashed">
-                        <h3 class="text-2xl font-black text-slate-400 uppercase tracking-wider mb-6 flex items-center"><span class="mr-3">🔒</span><span class="lang-eng block">Captain's Log (Parent's Guide)</span><span class="lang-jpn hidden">キャプテンの記録（保護者向け）</span></h3>
+                        <h3 class="text-xl md:text-2xl font-black text-slate-400 uppercase tracking-wider mb-6 flex items-center"><span class="mr-3">🔒</span><span class="lang-eng block">Captain's Log (Parent's Guide)</span><span class="lang-jpn hidden">キャプテンの記録（保護者向け）</span></h3>
                         <div class="space-y-4">
                             <details class="group bg-slate-200 rounded-xl overflow-hidden border-2 border-slate-300">
-                                <summary class="p-5 font-black text-slate-600 uppercase tracking-wider cursor-pointer hover:bg-slate-300 flex justify-between items-center transition-colors"><span class="lang-eng block">Cheat Sheet Q&A</span><span class="lang-jpn hidden">よくある質問と答え</span><span class="text-xl group-open:rotate-180 transition-transform">▼</span></summary>
-                                <div class="p-6 bg-white border-t-2 border-slate-300 text-slate-700 font-medium space-y-6">
+                                <summary class="p-4 md:p-5 font-black text-slate-600 text-sm md:text-base uppercase tracking-wider cursor-pointer hover:bg-slate-300 flex justify-between items-center transition-colors"><span class="lang-eng block">Cheat Sheet Q&A</span><span class="lang-jpn hidden">よくある質問と答え</span><span class="text-xl group-open:rotate-180 transition-transform">▼</span></summary>
+                                <div class="p-4 md:p-6 bg-white border-t-2 border-slate-300 text-slate-700 font-medium space-y-6 text-sm md:text-base">
                                     <div class="lang-eng block">
                                         <p class="font-bold text-blue-900 mb-1">Ari: "Why does this rock have holes in it?"</p><p class="text-slate-600 bg-slate-50 p-3 rounded border border-slate-200"><span class="font-bold text-orange-600">Your Answer:</span> "Those are frozen gas bubbles! The lava was full of bubbles, but it hit the cold air and froze into solid rock so fast that the bubbles got trapped inside forever. Pumice can actually float on water!"</p>
                                     </div>
@@ -253,40 +258,34 @@
                         </div>
                     </div>
                 </div>
-                ```
 
-***
-
-### Part 2: Weeks 3-5
-
-```html
                 <div id="week-3" class="week-content hidden space-y-10">
-                    <div class="bg-white p-8 rounded-2xl border-4 border-blue-100 shadow-md">
-                        <h2 class="text-4xl font-black text-blue-900 uppercase tracking-tight"><span class="lang-eng block">Week 3: Dormant Mode</span><span class="lang-jpn hidden">第3週: 休止モード</span></h2>
-                        <p class="text-blue-600 mt-2 text-lg font-medium">Mission Code: System Power Down | Focus: The volcano life cycle (Active, Dormant, Extinct).</p>
+                    <div class="bg-white p-6 md:p-8 rounded-2xl border-4 border-blue-100 shadow-md">
+                        <h2 class="text-3xl md:text-4xl font-black text-blue-900 uppercase tracking-tight"><span class="lang-eng block">Week 3: Dormant Mode</span><span class="lang-jpn hidden">第3週: 休止モード</span></h2>
+                        <p class="text-blue-600 mt-2 text-base md:text-lg font-medium">Mission Code: System Power Down | Focus: The volcano life cycle (Active, Dormant, Extinct).</p>
                     </div>
 
-                    <div class="flex items-start space-x-6">
+                    <div class="flex flex-col md:flex-row items-center md:items-start gap-4 md:gap-0 md:space-x-6">
                         <div class="w-20 h-20 bg-blue-200 rounded-full flex items-center justify-center border-4 border-white shadow-md shrink-0 overflow-hidden"><img src="Barnacles_vector_profile_29.webp" class="w-full h-full object-cover"></div>
-                        <div class="bg-white p-6 rounded-2xl rounded-tl-none border-2 border-slate-200 shadow-md relative flex-1">
-                            <div class="absolute top-0 left-[-10px] w-0 h-0 border-t-[15px] border-t-white border-l-[15px] border-l-transparent"></div>
+                        <div class="bg-white p-6 rounded-2xl md:rounded-tl-none border-2 border-slate-200 shadow-md relative flex-1 w-full">
+                            <div class="hidden md:block absolute top-0 left-[-10px] w-0 h-0 border-t-[15px] border-t-white border-l-[15px] border-l-transparent"></div>
                             <h3 class="font-black text-blue-900 uppercase tracking-wider mb-4 text-lg"><span class="lang-eng block">Captain's Briefing</span><span class="lang-jpn hidden">キャプテンの指令</span></h3>
-                            <div class="lang-eng block"><p class="text-slate-700 font-medium text-lg leading-relaxed">"Cadet Ari, Captain Barnacles here! Your Lead Commander is on a special mission in Germany this week, so the Gup-V is going into Dormant Mode to save power. Your mission this week is to study the video logs and learn the difference between a sleeping volcano and a dead volcano!"</p></div>
-                            <div class="lang-jpn hidden"><p class="text-slate-700 font-medium text-lg leading-relaxed">「新隊員、キャプテン・バーナクルだ！今週は指揮官がドイツで特別任務中だから、ガップVはエネルギー節約のために『休止モード（スリープ）』に入るぞ。今週の任務は、ビデオログを調べて『眠っている火山』と『死んだ火山』の違いを学ぶことだ！」</p></div>
+                            <div class="lang-eng block"><p class="text-slate-700 font-medium text-base md:text-lg leading-relaxed">"Cadet Ari, Captain Barnacles here! Your Lead Commander is on a special mission in Germany this week, so the Gup-V is going into Dormant Mode to save power. Your mission this week is to study the video logs and learn the difference between a sleeping volcano and a dead volcano!"</p></div>
+                            <div class="lang-jpn hidden"><p class="text-slate-700 font-medium text-base md:text-lg leading-relaxed">「新隊員、キャプテン・バーナクルだ！今週は指揮官がドイツで特別任務中だから、ガップVはエネルギー節約のために『休止モード（スリープ）』に入るぞ。今週の任務は、ビデオログを調べて『眠っている火山』と『死んだ火山』の違いを学ぶことだ！」</p></div>
                         </div>
                     </div>
 
-                    <div class="bg-blue-600 p-8 rounded-2xl shadow-md text-white border-4 border-blue-500">
+                    <div class="bg-blue-600 p-6 md:p-8 rounded-2xl shadow-md text-white border-4 border-blue-500">
                         <h3 class="text-xl font-black uppercase tracking-wider mb-6 flex items-center"><span class="mr-2">💡</span><span class="lang-eng block">Core Concepts</span><span class="lang-jpn hidden">重要コンセプト</span></h3>
                         <div class="lang-eng block space-y-4">
-                            <p class="text-lg"><span class="font-bold text-white border-b-2 border-orange-400">Active:</span> Currently erupting or showing signs of waking up.</p>
-                            <p class="text-lg"><span class="font-bold text-white border-b-2 border-orange-400">Dormant:</span> Sleeping. It hasn't erupted in a long time, but the plumbing is still connected to the magma deep underground.</p>
-                            <p class="text-lg"><span class="font-bold text-white border-b-2 border-orange-400">Extinct:</span> Dead. The plumbing has completely broken off from the magma. It will never erupt again.</p>
+                            <p class="text-base md:text-lg"><span class="font-bold text-white border-b-2 border-orange-400">Active:</span> Currently erupting or showing signs of waking up.</p>
+                            <p class="text-base md:text-lg"><span class="font-bold text-white border-b-2 border-orange-400">Dormant:</span> Sleeping. It hasn't erupted in a long time, but the plumbing is still connected to the magma deep underground.</p>
+                            <p class="text-base md:text-lg"><span class="font-bold text-white border-b-2 border-orange-400">Extinct:</span> Dead. The plumbing has completely broken off from the magma. It will never erupt again.</p>
                         </div>
                         <div class="lang-jpn hidden space-y-4">
-                            <p class="text-lg"><span class="font-bold text-white border-b-2 border-orange-400">活火山 (Active):</span> 現在噴火している、または目覚める兆候がある火山。</p>
-                            <p class="text-lg"><span class="font-bold text-white border-b-2 border-orange-400">休火山 (Dormant):</span> 眠っている火山。長い間噴火していませんが、パイプはまだ地下深くのマグマとつながっています。</p>
-                            <p class="text-lg"><span class="font-bold text-white border-b-2 border-orange-400">死火山 (Extinct):</span> 死んだ火山。パイプがマグマから完全に切り離されていて、もう二度と噴火しません。</p>
+                            <p class="text-base md:text-lg"><span class="font-bold text-white border-b-2 border-orange-400">活火山 (Active):</span> 現在噴火している、または目覚める兆候がある火山。</p>
+                            <p class="text-base md:text-lg"><span class="font-bold text-white border-b-2 border-orange-400">休火山 (Dormant):</span> 眠っている火山。長い間噴火していませんが、パイプはまだ地下深くのマグマとつながっています。</p>
+                            <p class="text-base md:text-lg"><span class="font-bold text-white border-b-2 border-orange-400">死火山 (Extinct):</span> 死んだ火山。パイプがマグマから完全に切り離されていて、もう二度と噴火しません。</p>
                         </div>
                     </div>
 
@@ -294,18 +293,18 @@
                         <div class="bg-white p-6 rounded-2xl border-2 border-slate-200 shadow-sm col-span-1">
                             <h3 class="text-xl font-black text-blue-900 uppercase tracking-wider mb-6"><span class="lang-eng block">Materials</span><span class="lang-jpn hidden">必要なもの</span></h3>
                             <ul class="space-y-4 text-slate-700 font-bold text-sm">
-                                <li class="flex items-start"><input type="checkbox" id="mat-1-w3" class="mt-1 w-5 h-5 mr-3 accent-orange-500 cursor-pointer"> <label for="mat-1-w3" class="cursor-pointer"><span class="lang-eng block">TV or Tablet for Video Logs</span><span class="lang-jpn hidden">ビデオログを見るためのテレビやタブレット</span></label></li>
+                                <li class="flex items-start"><input type="checkbox" id="mat-1-w3" class="material-checkbox mt-1 w-5 h-5 mr-3 accent-orange-500 cursor-pointer"> <label for="mat-1-w3" class="cursor-pointer"><span class="lang-eng block">TV or Tablet for Video Logs</span><span class="lang-jpn hidden">ビデオログを見るためのテレビやタブレット</span></label></li>
                             </ul>
                         </div>
-                        <div class="bg-white p-8 rounded-2xl border-2 border-slate-200 shadow-sm col-span-2 flex flex-col justify-between">
+                        <div class="bg-white p-6 md:p-8 rounded-2xl border-2 border-slate-200 shadow-sm col-span-1 lg:col-span-2 flex flex-col justify-between">
                             <div>
                                 <h3 class="text-xl font-black text-blue-900 uppercase tracking-wider mb-6"><span class="lang-eng block">The Mission: Visual Logs</span><span class="lang-jpn hidden">ミッション: ビデオログ調査</span></h3>
-                                <div class="lang-eng block space-y-6 text-slate-700 font-medium text-[1.05rem] leading-snug">
+                                <div class="lang-eng block space-y-6 text-slate-700 font-medium text-base md:text-[1.05rem] leading-snug">
                                     <p>There is no hands-on messy project this week.</p>
                                     <p><span class="font-bold text-blue-900">Step 1:</span> Queue up a visual log on the TV. Search YouTube for kid-friendly volcano documentaries (like SciShow Kids Volcanoes or National Geographic Kids).</p>
                                     <p><span class="font-bold text-blue-900">Step 2:</span> Let Ari watch how real lava flows and how big ash clouds get.</p>
                                 </div>
-                                <div class="lang-jpn hidden space-y-6 text-slate-700 font-medium text-[1.05rem] leading-snug">
+                                <div class="lang-jpn hidden space-y-6 text-slate-700 font-medium text-base md:text-[1.05rem] leading-snug">
                                     <p>今週は手を汚す実験はお休みです。</p>
                                     <p><span class="font-bold text-blue-900">ステップ 1:</span> テレビでビデオログを準備します。YouTubeで子ども向けの火山ドキュメンタリーを探しましょう。</p>
                                     <p><span class="font-bold text-blue-900">ステップ 2:</span> 本物の溶岩がどのように流れ、灰の雲がどれほど大きくなるかをアリに見せます。</p>
@@ -313,8 +312,8 @@
                             </div>
                             <div class="mt-8 bg-blue-50 border-l-4 border-orange-400 p-5 rounded-r-xl">
                                 <h3 class="text-lg font-black text-blue-900 uppercase tracking-wider mb-2 flex items-center"><span class="text-xl mr-2">👧🏻</span><span class="lang-eng block">Mia's Target: Data Observer</span><span class="lang-jpn hidden">ミアの任務: データ監視員</span></h3>
-                                <p class="lang-eng block text-blue-800 font-medium">She gets to sit on the couch with Ari and watch the video logs.</p>
-                                <p class="lang-jpn hidden text-blue-800 font-medium">アリと一緒にソファに座り、ビデオログを監視します。</p>
+                                <p class="lang-eng block text-blue-800 font-medium text-sm md:text-base">She gets to sit on the couch with Ari and watch the video logs.</p>
+                                <p class="lang-jpn hidden text-blue-800 font-medium text-sm md:text-base">アリと一緒にソファに座り、ビデオログを監視します。</p>
                             </div>
                         </div>
                     </div>
@@ -325,7 +324,7 @@
                             <div class="lang-eng block"><h4 class="font-bold text-orange-800 mb-1">The Drawing</h4><p class="text-orange-900 font-medium text-sm">Have Ari draw a "sleeping" mountain. He can draw the mountain outline, but instead of red magma, draw "Zzzzz" above the crater.</p></div>
                             <div class="lang-jpn hidden"><h4 class="font-bold text-orange-800 mb-1">お絵かき</h4><p class="text-orange-900 font-medium text-sm">アリに「眠っている山」を描いてもらいます。赤いマグマの代わりに、火口の上に「Zzzzz（スヤスヤ）」と描きましょう。</p></div>
                             
-                            <div class="border-l-2 border-orange-200 pl-6"><h4 class="font-bold text-orange-800 mb-1">The Labeling Targets</h4><p class="lang-eng block text-orange-900 font-bold text-lg"><span class="text-sm font-black mr-2 text-orange-700">ENG:</span> Dormant, Sleep</p><p class="lang-jpn hidden text-orange-900 font-bold text-lg"><span class="text-sm font-black mr-2 text-orange-700">JPN:</span> おやすみ, 休火山</p></div>
+                            <div class="border-t-2 md:border-t-0 md:border-l-2 border-orange-200 pt-4 md:pt-0 md:pl-6"><h4 class="font-bold text-orange-800 mb-1">The Labeling Targets</h4><p class="lang-eng block text-orange-900 font-bold text-lg"><span class="text-sm font-black mr-2 text-orange-700">ENG:</span> Dormant, Sleep</p><p class="lang-jpn hidden text-orange-900 font-bold text-lg"><span class="text-sm font-black mr-2 text-orange-700">JPN:</span> おやすみ, 休火山</p></div>
                         </div>
                     </div>
 
@@ -340,11 +339,11 @@
                     </div>
 
                     <div class="mt-12 pt-8 border-t-4 border-slate-300 border-dashed">
-                        <h3 class="text-2xl font-black text-slate-400 uppercase tracking-wider mb-6 flex items-center"><span class="mr-3">🔒</span><span class="lang-eng block">Captain's Log (Parent's Guide)</span><span class="lang-jpn hidden">キャプテンの記録（保護者向け）</span></h3>
+                        <h3 class="text-xl md:text-2xl font-black text-slate-400 uppercase tracking-wider mb-6 flex items-center"><span class="mr-3">🔒</span><span class="lang-eng block">Captain's Log (Parent's Guide)</span><span class="lang-jpn hidden">キャプテンの記録（保護者向け）</span></h3>
                         <div class="space-y-4">
                             <details class="group bg-slate-200 rounded-xl overflow-hidden border-2 border-slate-300">
-                                <summary class="p-5 font-black text-slate-600 uppercase tracking-wider cursor-pointer hover:bg-slate-300 flex justify-between items-center transition-colors"><span class="lang-eng block">Cheat Sheet Q&A</span><span class="lang-jpn hidden">よくある質問と答え</span><span class="text-xl group-open:rotate-180 transition-transform">▼</span></summary>
-                                <div class="p-6 bg-white border-t-2 border-slate-300 text-slate-700 font-medium space-y-6">
+                                <summary class="p-4 md:p-5 font-black text-slate-600 text-sm md:text-base uppercase tracking-wider cursor-pointer hover:bg-slate-300 flex justify-between items-center transition-colors"><span class="lang-eng block">Cheat Sheet Q&A</span><span class="lang-jpn hidden">よくある質問と答え</span><span class="text-xl group-open:rotate-180 transition-transform">▼</span></summary>
+                                <div class="p-4 md:p-6 bg-white border-t-2 border-slate-300 text-slate-700 font-medium space-y-6 text-sm md:text-base">
                                     <div class="lang-eng block">
                                         <p class="font-bold text-blue-900 mb-1">Ari: "If a volcano is extinct, could it trick us and wake up anyway?"</p><p class="text-slate-600 bg-slate-50 p-3 rounded border border-slate-200"><span class="font-bold text-orange-600">Your Answer:</span> "It's extremely rare. Scientists use special earthquake-tracking machines to listen to the mountain. If magma starts moving miles underground, the machines feel the tiny earthquakes, so they always know if a dormant mountain is waking up."</p>
                                     </div>
@@ -358,28 +357,28 @@
                 </div>
 
                 <div id="week-4" class="week-content hidden space-y-10">
-                    <div class="bg-white p-8 rounded-2xl border-4 border-blue-100 shadow-md">
-                        <h2 class="text-4xl font-black text-blue-900 uppercase tracking-tight"><span class="lang-eng block">Week 4: Pressure Valve</span><span class="lang-jpn hidden">第4週: 圧力テスト</span></h2>
-                        <p class="text-blue-600 mt-2 text-lg font-medium">Mission Code: Gas Pressure Dynamics | Focus: Chemical reactions, trapped gas, and explosive vs. slow eruptions.</p>
+                    <div class="bg-white p-6 md:p-8 rounded-2xl border-4 border-blue-100 shadow-md">
+                        <h2 class="text-3xl md:text-4xl font-black text-blue-900 uppercase tracking-tight"><span class="lang-eng block">Week 4: Pressure Valve</span><span class="lang-jpn hidden">第4週: 圧力テスト</span></h2>
+                        <p class="text-blue-600 mt-2 text-base md:text-lg font-medium">Mission Code: Gas Pressure Dynamics | Focus: Chemical reactions, trapped gas, and explosive vs. slow eruptions.</p>
                     </div>
 
-                    <div class="flex items-start space-x-6">
+                    <div class="flex flex-col md:flex-row items-center md:items-start gap-4 md:gap-0 md:space-x-6">
                         <div class="w-20 h-20 bg-blue-200 rounded-full flex items-center justify-center border-4 border-white shadow-md shrink-0 text-3xl">🐱‍👤</div>
-                        <div class="bg-white p-6 rounded-2xl rounded-tl-none border-2 border-slate-200 shadow-md relative flex-1">
-                            <div class="absolute top-0 left-[-10px] w-0 h-0 border-t-[15px] border-t-white border-l-[15px] border-l-transparent"></div>
+                        <div class="bg-white p-6 rounded-2xl md:rounded-tl-none border-2 border-slate-200 shadow-md relative flex-1 w-full">
+                            <div class="hidden md:block absolute top-0 left-[-10px] w-0 h-0 border-t-[15px] border-t-white border-l-[15px] border-l-transparent"></div>
                             <h3 class="font-black text-blue-900 uppercase tracking-wider mb-4 text-lg"><span class="lang-eng block">Captain's Briefing</span><span class="lang-jpn hidden">キャプテンの指令</span></h3>
-                            <div class="lang-eng block"><p class="text-slate-700 font-medium text-lg leading-relaxed">"Sound the Octo-Alert! Cadet Ari, Kwazii wants an extreme engine boost, but Tweak warns that if the gas pressure builds up too fast, the Gup-V will explode! Your mission today is to test the pressure limits in the lab. We need to see exactly what happens when gas pushes liquid up a pipe!"</p></div>
-                            <div class="lang-jpn hidden"><p class="text-slate-700 font-medium text-lg leading-relaxed">「オクトアラート発令！新隊員、クワジーがエンジンのパワーを限界まで上げたいと言っているが、トゥイークが『ガスの圧力が上がりすぎるとガップVが爆発する！』と止めているんだ。今日の任務は、実験室で圧力の限界をテストすること。ガスが液体をパイプの上に押し上げる時、何が起きるか見極めるぞ！」</p></div>
+                            <div class="lang-eng block"><p class="text-slate-700 font-medium text-base md:text-lg leading-relaxed">"Sound the Octo-Alert! Cadet Ari, Kwazii wants an extreme engine boost, but Tweak warns that if the gas pressure builds up too fast, the Gup-V will explode! Your mission today is to test the pressure limits in the lab. We need to see exactly what happens when gas pushes liquid up a pipe!"</p></div>
+                            <div class="lang-jpn hidden"><p class="text-slate-700 font-medium text-base md:text-lg leading-relaxed">「オクトアラート発令！新隊員、クワジーがエンジンのパワーを限界まで上げたいと言っているが、トゥイークが『ガスの圧力が上がりすぎるとガップVが爆発する！』と止めているんだ。今日の任務は、実験室で圧力の限界をテストすること。ガスが液体をパイプの上に押し上げる時、何が起きるか見極めるぞ！」</p></div>
                         </div>
                     </div>
 
-                    <div class="bg-blue-600 p-8 rounded-2xl shadow-md text-white border-4 border-blue-500">
+                    <div class="bg-blue-600 p-6 md:p-8 rounded-2xl shadow-md text-white border-4 border-blue-500">
                         <h3 class="text-xl font-black uppercase tracking-wider mb-6 flex items-center"><span class="mr-2">💡</span><span class="lang-eng block">Core Concepts</span><span class="lang-jpn hidden">重要コンセプト</span></h3>
                         <div class="lang-eng block space-y-4">
-                            <p class="text-lg">Magma isn't just liquid rock; it is packed with dissolved gases. When magma rises, pressure drops, and gases expand into bubbles. If bubbles get trapped, pressure builds until the mountain blows. We use a chemical reaction to create carbon dioxide gas and simulate that pressure.</p>
+                            <p class="text-base md:text-lg">Magma isn't just liquid rock; it is packed with dissolved gases. When magma rises, pressure drops, and gases expand into bubbles. If bubbles get trapped, pressure builds until the mountain blows. We use a chemical reaction to create carbon dioxide gas and simulate that pressure.</p>
                         </div>
                         <div class="lang-jpn hidden space-y-4">
-                            <p class="text-lg">マグマはただの液体の岩ではなく、溶けたガスがたくさん詰まっています。マグマが上に上がると圧力が下がり、ガスが膨らんで泡になります。泡が閉じ込められると圧力がどんどん高まり、最後には山を吹き飛ばします。化学反応で二酸化炭素のガスを作り、その圧力をシミュレーションしてみましょう。</p>
+                            <p class="text-base md:text-lg">マグマはただの液体の岩ではなく、溶けたガスがたくさん詰まっています。マグマが上に上がると圧力が下がり、ガスが膨らんで泡になります。泡が閉じ込められると圧力がどんどん高まり、最後には山を吹き飛ばします。化学反応で二酸化炭素のガスを作り、その圧力をシミュレーションしてみましょう。</p>
                         </div>
                     </div>
 
@@ -387,21 +386,21 @@
                         <div class="bg-white p-6 rounded-2xl border-2 border-slate-200 shadow-sm col-span-1">
                             <h3 class="text-xl font-black text-blue-900 uppercase tracking-wider mb-6"><span class="lang-eng block">Materials</span><span class="lang-jpn hidden">必要なもの</span></h3>
                             <ul class="space-y-4 text-slate-700 font-bold text-sm">
-                                <li class="flex items-start"><input type="checkbox" id="mat-1-w4" class="mt-1 w-5 h-5 mr-3 accent-orange-500 cursor-pointer"> <label for="mat-1-w4" class="cursor-pointer"><span class="lang-eng block">Plastic cup / Playdough base</span><span class="lang-jpn hidden">プラスチックのコップ / 粘土の土台</span></label></li>
-                                <li class="flex items-start"><input type="checkbox" id="mat-2-w4" class="mt-1 w-5 h-5 mr-3 accent-orange-500 cursor-pointer"> <label for="mat-2-w4" class="cursor-pointer"><span class="lang-eng block">2 tablespoons baking soda</span><span class="lang-jpn hidden">重曹 大さじ2</span></label></li>
-                                <li class="flex items-start"><input type="checkbox" id="mat-3-w4" class="mt-1 w-5 h-5 mr-3 accent-orange-500 cursor-pointer"> <label for="mat-3-w4" class="cursor-pointer"><span class="lang-eng block">Squirt of dish soap</span><span class="lang-jpn hidden">食器用洗剤 少々</span></label></li>
-                                <li class="flex items-start"><input type="checkbox" id="mat-4-w4" class="mt-1 w-5 h-5 mr-3 accent-orange-500 cursor-pointer"> <label for="mat-4-w4" class="cursor-pointer"><span class="lang-eng block">Vinegar</span><span class="lang-jpn hidden">お酢</span></label></li>
+                                <li class="flex items-start"><input type="checkbox" id="mat-1-w4" class="material-checkbox mt-1 w-5 h-5 mr-3 accent-orange-500 cursor-pointer"> <label for="mat-1-w4" class="cursor-pointer"><span class="lang-eng block">Plastic cup / Playdough base</span><span class="lang-jpn hidden">プラスチックのコップ / 粘土の土台</span></label></li>
+                                <li class="flex items-start"><input type="checkbox" id="mat-2-w4" class="material-checkbox mt-1 w-5 h-5 mr-3 accent-orange-500 cursor-pointer"> <label for="mat-2-w4" class="cursor-pointer"><span class="lang-eng block">2 tablespoons baking soda</span><span class="lang-jpn hidden">重曹 大さじ2</span></label></li>
+                                <li class="flex items-start"><input type="checkbox" id="mat-3-w4" class="material-checkbox mt-1 w-5 h-5 mr-3 accent-orange-500 cursor-pointer"> <label for="mat-3-w4" class="cursor-pointer"><span class="lang-eng block">Squirt of dish soap</span><span class="lang-jpn hidden">食器用洗剤 少々</span></label></li>
+                                <li class="flex items-start"><input type="checkbox" id="mat-4-w4" class="material-checkbox mt-1 w-5 h-5 mr-3 accent-orange-500 cursor-pointer"> <label for="mat-4-w4" class="cursor-pointer"><span class="lang-eng block">Vinegar</span><span class="lang-jpn hidden">お酢</span></label></li>
                             </ul>
                         </div>
-                        <div class="bg-white p-8 rounded-2xl border-2 border-slate-200 shadow-sm col-span-2 flex flex-col justify-between">
+                        <div class="bg-white p-6 md:p-8 rounded-2xl border-2 border-slate-200 shadow-sm col-span-1 lg:col-span-2 flex flex-col justify-between">
                             <div>
                                 <h3 class="text-xl font-black text-blue-900 uppercase tracking-wider mb-6"><span class="lang-eng block">The Mission: The Classic Eruption</span><span class="lang-jpn hidden">ミッション: クラシックな大噴火</span></h3>
-                                <div class="lang-eng block space-y-6 text-slate-700 font-medium text-[1.05rem] leading-snug">
+                                <div class="lang-eng block space-y-6 text-slate-700 font-medium text-base md:text-[1.05rem] leading-snug">
                                     <p><span class="font-bold text-blue-900">Step 1 (Chamber Prep):</span> Using a plastic cup (or the Week 1 playdough base), have Ari add 2 tablespoons of baking soda and a squirt of dish soap (to make thick, foamy bubbles).</p>
                                     <p><span class="font-bold text-blue-900">Step 2 (The Eruption):</span> Hand Ari a cup of vinegar. Have him pour it in and watch the chemical reaction create instant gas pressure that forces the foam up and out.</p>
                                     <p><span class="font-bold text-blue-900">Step 3 (Lab Adjustments):</span> Let him experiment. What happens if he uses more baking soda? What if he pours the vinegar slow (slow ooze) versus fast (rapid explosion)?</p>
                                 </div>
-                                <div class="lang-jpn hidden space-y-6 text-slate-700 font-medium text-[1.05rem] leading-snug">
+                                <div class="lang-jpn hidden space-y-6 text-slate-700 font-medium text-base md:text-[1.05rem] leading-snug">
                                     <p><span class="font-bold text-blue-900">ステップ 1 (準備):</span> プラスチックのコップ（または第1週の粘土モデル）に、アリに重曹大さじ2杯と食器用洗剤（泡を分厚くするため）を入れさせます。</p>
                                     <p><span class="font-bold text-blue-900">ステップ 2 (大噴火):</span> アリにお酢の入ったコップを渡します。お酢を注いで、化学反応によって一瞬でガスが発生し、泡が押し上げられるのを見ましょう。</p>
                                     <p><span class="font-bold text-blue-900">ステップ 3 (微調整):</span> 実験させてみましょう。重曹をもっと増やすとどうなる？お酢をゆっくり注ぐ（じわじわ流れる）のと、早く注ぐ（大爆発）のではどう違う？</p>
@@ -409,8 +408,8 @@
                             </div>
                             <div class="mt-8 bg-blue-50 border-l-4 border-orange-400 p-5 rounded-r-xl">
                                 <h3 class="text-lg font-black text-blue-900 uppercase tracking-wider mb-2 flex items-center"><span class="text-xl mr-2">👧🏻</span><span class="lang-eng block">Mia's Target: Chemical Payload Dropper</span><span class="lang-jpn hidden">ミアの任務: 化学燃料投下係</span></h3>
-                                <p class="lang-eng block text-blue-800 font-medium">Let her be the one to drop the dry scoops of baking soda into the cup before Ari handles the liquid vinegar pouring.</p>
-                                <p class="lang-jpn hidden text-blue-800 font-medium">アリがお酢を注ぐ前に、乾燥した重曹をスプーンでコップに入れる係をミアに任せます。</p>
+                                <p class="lang-eng block text-blue-800 font-medium text-sm md:text-base">Let her be the one to drop the dry scoops of baking soda into the cup before Ari handles the liquid vinegar pouring.</p>
+                                <p class="lang-jpn hidden text-blue-800 font-medium text-sm md:text-base">アリがお酢を注ぐ前に、乾燥した重曹をスプーンでコップに入れる係をミアに任せます。</p>
                             </div>
                         </div>
                     </div>
@@ -421,7 +420,7 @@
                             <div class="lang-eng block"><h4 class="font-bold text-orange-800 mb-1">The Drawing</h4><p class="text-orange-900 font-medium text-sm">Have Ari draw the cup or mountain with giant bubbles foaming out over the top.</p></div>
                             <div class="lang-jpn hidden"><h4 class="font-bold text-orange-800 mb-1">お絵かき</h4><p class="text-orange-900 font-medium text-sm">コップや山から巨大な泡が溢れ出している様子をアリに描いてもらいます。</p></div>
                             
-                            <div class="border-l-2 border-orange-200 pl-6"><h4 class="font-bold text-orange-800 mb-1">The Labeling Targets</h4><p class="lang-eng block text-orange-900 font-bold text-lg"><span class="text-sm font-black mr-2 text-orange-700">ENG:</span> Pressure, Gas, Erupt</p><p class="lang-jpn hidden text-orange-900 font-bold text-lg"><span class="text-sm font-black mr-2 text-orange-700">JPN:</span> ふんか, ガス</p></div>
+                            <div class="border-t-2 md:border-t-0 md:border-l-2 border-orange-200 pt-4 md:pt-0 md:pl-6"><h4 class="font-bold text-orange-800 mb-1">The Labeling Targets</h4><p class="lang-eng block text-orange-900 font-bold text-lg"><span class="text-sm font-black mr-2 text-orange-700">ENG:</span> Pressure, Gas, Erupt</p><p class="lang-jpn hidden text-orange-900 font-bold text-lg"><span class="text-sm font-black mr-2 text-orange-700">JPN:</span> ふんか, ガス</p></div>
                         </div>
                     </div>
 
@@ -436,11 +435,11 @@
                     </div>
 
                     <div class="mt-12 pt-8 border-t-4 border-slate-300 border-dashed">
-                        <h3 class="text-2xl font-black text-slate-400 uppercase tracking-wider mb-6 flex items-center"><span class="mr-3">🔒</span><span class="lang-eng block">Captain's Log (Parent's Guide)</span><span class="lang-jpn hidden">キャプテンの記録（保護者向け）</span></h3>
+                        <h3 class="text-xl md:text-2xl font-black text-slate-400 uppercase tracking-wider mb-6 flex items-center"><span class="mr-3">🔒</span><span class="lang-eng block">Captain's Log (Parent's Guide)</span><span class="lang-jpn hidden">キャプテンの記録（保護者向け）</span></h3>
                         <div class="space-y-4">
                             <details class="group bg-slate-200 rounded-xl overflow-hidden border-2 border-slate-300">
-                                <summary class="p-5 font-black text-slate-600 uppercase tracking-wider cursor-pointer hover:bg-slate-300 flex justify-between items-center transition-colors"><span class="lang-eng block">Cheat Sheet Q&A</span><span class="lang-jpn hidden">よくある質問と答え</span><span class="text-xl group-open:rotate-180 transition-transform">▼</span></summary>
-                                <div class="p-6 bg-white border-t-2 border-slate-300 text-slate-700 font-medium space-y-6">
+                                <summary class="p-4 md:p-5 font-black text-slate-600 text-sm md:text-base uppercase tracking-wider cursor-pointer hover:bg-slate-300 flex justify-between items-center transition-colors"><span class="lang-eng block">Cheat Sheet Q&A</span><span class="lang-jpn hidden">よくある質問と答え</span><span class="text-xl group-open:rotate-180 transition-transform">▼</span></summary>
+                                <div class="p-4 md:p-6 bg-white border-t-2 border-slate-300 text-slate-700 font-medium space-y-6 text-sm md:text-base">
                                     <div class="lang-eng block">
                                         <p class="font-bold text-blue-900 mb-1">Ari: "Why did the vinegar and baking soda make bubbles?"</p><p class="text-slate-600 bg-slate-50 p-3 rounded border border-slate-200"><span class="font-bold text-orange-600">Your Answer:</span> "It's a chemical reaction! The baking soda is a 'base' and the vinegar is an 'acid'. When they crash into each other, they turn into carbon dioxide gas. That gas needed space, so it pushed all the soapy water out of the cup."</p>
                                     </div>
@@ -460,32 +459,32 @@
                 </div>
 
                 <div id="week-5" class="week-content hidden space-y-10">
-                    <div class="bg-white p-8 rounded-2xl border-4 border-blue-100 shadow-md">
-                        <h2 class="text-4xl font-black text-blue-900 uppercase tracking-tight"><span class="lang-eng block">Week 5: Ring of Fire</span><span class="lang-jpn hidden">第5週: 環太平洋火山帯</span></h2>
-                        <p class="text-blue-600 mt-2 text-lg font-medium">Mission Code: Plate Tectonics | Focus: Spatial reasoning and understanding how moving crust creates volcanic vents.</p>
+                    <div class="bg-white p-6 md:p-8 rounded-2xl border-4 border-blue-100 shadow-md">
+                        <h2 class="text-3xl md:text-4xl font-black text-blue-900 uppercase tracking-tight"><span class="lang-eng block">Week 5: Ring of Fire</span><span class="lang-jpn hidden">第5週: 環太平洋火山帯</span></h2>
+                        <p class="text-blue-600 mt-2 text-base md:text-lg font-medium">Mission Code: Plate Tectonics | Focus: Spatial reasoning and understanding how moving crust creates volcanic vents.</p>
                     </div>
 
-                    <div class="flex items-start space-x-6">
+                    <div class="flex flex-col md:flex-row items-center md:items-start gap-4 md:gap-0 md:space-x-6">
                         <div class="w-20 h-20 bg-blue-200 rounded-full flex items-center justify-center border-4 border-white shadow-md shrink-0 text-3xl">🦦</div>
-                        <div class="bg-white p-6 rounded-2xl rounded-tl-none border-2 border-slate-200 shadow-md relative flex-1">
-                            <div class="absolute top-0 left-[-10px] w-0 h-0 border-t-[15px] border-t-white border-l-[15px] border-l-transparent"></div>
+                        <div class="bg-white p-6 rounded-2xl md:rounded-tl-none border-2 border-slate-200 shadow-md relative flex-1 w-full">
+                            <div class="hidden md:block absolute top-0 left-[-10px] w-0 h-0 border-t-[15px] border-t-white border-l-[15px] border-l-transparent"></div>
                             <h3 class="font-black text-blue-900 uppercase tracking-wider mb-4 text-lg"><span class="lang-eng block">Captain's Briefing</span><span class="lang-jpn hidden">キャプテンの指令</span></h3>
-                            <div class="lang-eng block"><p class="text-slate-700 font-medium text-lg leading-relaxed">"Calling Cadet Ari! Shellington and Dashi are looking at the global map, and they've noticed a massive pattern! Volcanoes aren't just popping up randomly—they are hiding along giant cracks in the Earth called the Ring of Fire. Your mission is to test a 'core sample' of the Earth's crust in the lab and figure out how moving puzzle pieces let the magma escape!"</p></div>
-                            <div class="lang-jpn hidden"><p class="text-slate-700 font-medium text-lg leading-relaxed">「新隊員、応答せよ！シェリントンとダシーが世界地図を見て、とんでもない法則を発見したぞ！火山はデタラメにできているわけじゃない。地球の『環太平洋火山帯（リング・オブ・ファイア）』と呼ばれる巨大な割れ目に沿って隠れているんだ。今日の任務は、実験室で地球の殻の『サンプル』をテストして、動くパズルのピースがどうやってマグマを逃がしているのかを解明することだ！」</p></div>
+                            <div class="lang-eng block"><p class="text-slate-700 font-medium text-base md:text-lg leading-relaxed">"Calling Cadet Ari! Shellington and Dashi are looking at the global map, and they've noticed a massive pattern! Volcanoes aren't just popping up randomly—they are hiding along giant cracks in the Earth called the Ring of Fire. Your mission is to test a 'core sample' of the Earth's crust in the lab and figure out how moving puzzle pieces let the magma escape!"</p></div>
+                            <div class="lang-jpn hidden"><p class="text-slate-700 font-medium text-base md:text-lg leading-relaxed">「新隊員、応答せよ！シェリントンとダシーが世界地図を見て、とんでもない法則を発見したぞ！火山はデタラメにできているわけじゃない。地球の『環太平洋火山帯（リング・オブ・ファイア）』と呼ばれる巨大な割れ目に沿って隠れているんだ。今日の任務は、実験室で地球の殻の『サンプル』をテストして、動くパズルのピースがどうやってマグマを逃がしているのかを解明することだ！」</p></div>
                         </div>
                     </div>
 
-                    <div class="bg-blue-600 p-8 rounded-2xl shadow-md text-white border-4 border-blue-500">
+                    <div class="bg-blue-600 p-6 md:p-8 rounded-2xl shadow-md text-white border-4 border-blue-500">
                         <h3 class="text-xl font-black uppercase tracking-wider mb-6 flex items-center"><span class="mr-2">💡</span><span class="lang-eng block">Core Concepts</span><span class="lang-jpn hidden">重要コンセプト</span></h3>
                         <div class="lang-eng block space-y-4">
-                            <p class="text-lg"><span class="font-bold text-white border-b-2 border-orange-400">The Crust (地殻):</span> The rocky outside of the Earth isn't one solid piece. It's cracked into puzzle pieces called Tectonic Plates.</p>
-                            <p class="text-lg"><span class="font-bold text-white border-b-2 border-orange-400">The Mantle (マントル):</span> The super-hot, squishy layer of melted rock right underneath the crust.</p>
-                            <p class="text-lg"><span class="font-bold text-white border-b-2 border-orange-400">The Ring of Fire (環太平洋火山帯):</span> The boundary lines where these giant plates crash or pull apart. Washington State and Japan sit on the exact same loop!</p>
+                            <p class="text-base md:text-lg"><span class="font-bold text-white border-b-2 border-orange-400">The Crust (地殻):</span> The rocky outside of the Earth isn't one solid piece. It's cracked into puzzle pieces called Tectonic Plates.</p>
+                            <p class="text-base md:text-lg"><span class="font-bold text-white border-b-2 border-orange-400">The Mantle (マントル):</span> The super-hot, squishy layer of melted rock right underneath the crust.</p>
+                            <p class="text-base md:text-lg"><span class="font-bold text-white border-b-2 border-orange-400">The Ring of Fire (環太平洋火山帯):</span> The boundary lines where these giant plates crash or pull apart. Washington State and Japan sit on the exact same loop!</p>
                         </div>
                         <div class="lang-jpn hidden space-y-4">
-                            <p class="text-lg"><span class="font-bold text-white border-b-2 border-orange-400">地殻 (The Crust):</span> 地球の岩石でできた外側は、一つの硬い塊ではありません。ジグソーパズルのように割れていて、それを「プレート」と呼びます。</p>
-                            <p class="text-lg"><span class="font-bold text-white border-b-2 border-orange-400">マントル (The Mantle):</span> 地殻のすぐ下にある、超高温でドロドロに溶けた岩石の層です。</p>
-                            <p class="text-lg"><span class="font-bold text-white border-b-2 border-orange-400">環太平洋火山帯 (The Ring of Fire):</span> これらの巨大なプレートがぶつかったり、離れたりする境界線です。ワシントン州と日本は、まったく同じこのループの上にあります！</p>
+                            <p class="text-base md:text-lg"><span class="font-bold text-white border-b-2 border-orange-400">地殻 (The Crust):</span> 地球の岩石でできた外側は、一つの硬い塊ではありません。ジグソーパズルのように割れていて、それを「プレート」と呼びます。</p>
+                            <p class="text-base md:text-lg"><span class="font-bold text-white border-b-2 border-orange-400">マントル (The Mantle):</span> 地殻のすぐ下にある、超高温でドロドロに溶けた岩石の層です。</p>
+                            <p class="text-base md:text-lg"><span class="font-bold text-white border-b-2 border-orange-400">環太平洋火山帯 (The Ring of Fire):</span> これらの巨大なプレートがぶつかったり、離れたりする境界線です。ワシントン州と日本は、まったく同じこのループの上にあります！</p>
                         </div>
                     </div>
 
@@ -493,20 +492,20 @@
                         <div class="bg-white p-6 rounded-2xl border-2 border-slate-200 shadow-sm col-span-1">
                             <h3 class="text-xl font-black text-blue-900 uppercase tracking-wider mb-6"><span class="lang-eng block">Materials</span><span class="lang-jpn hidden">必要なもの</span></h3>
                             <ul class="space-y-4 text-slate-700 font-bold text-sm">
-                                <li class="flex items-start"><input type="checkbox" id="mat-1-w5" class="mt-1 w-5 h-5 mr-3 accent-orange-500 cursor-pointer"> <label for="mat-1-w5" class="cursor-pointer"><span class="lang-eng block">Milky Way/3 Musketeers bar</span><span class="lang-jpn hidden">ミルキーウェイ等のチョコバー</span></label></li>
-                                <li class="flex items-start"><input type="checkbox" id="mat-2-w5" class="mt-1 w-5 h-5 mr-3 accent-orange-500 cursor-pointer"> <label for="mat-2-w5" class="cursor-pointer"><span class="lang-eng block">Snack-size candy bar for Mia</span><span class="lang-jpn hidden">ミア用の一口チョコバー</span></label></li>
-                                <li class="flex items-start"><input type="checkbox" id="mat-3-w5" class="mt-1 w-5 h-5 mr-3 accent-orange-500 cursor-pointer"> <label for="mat-3-w5" class="cursor-pointer"><span class="lang-eng block">Plates</span><span class="lang-jpn hidden">お皿</span></label></li>
+                                <li class="flex items-start"><input type="checkbox" id="mat-1-w5" class="material-checkbox mt-1 w-5 h-5 mr-3 accent-orange-500 cursor-pointer"> <label for="mat-1-w5" class="cursor-pointer"><span class="lang-eng block">Milky Way/3 Musketeers bar</span><span class="lang-jpn hidden">ミルキーウェイ等のチョコバー</span></label></li>
+                                <li class="flex items-start"><input type="checkbox" id="mat-2-w5" class="material-checkbox mt-1 w-5 h-5 mr-3 accent-orange-500 cursor-pointer"> <label for="mat-2-w5" class="cursor-pointer"><span class="lang-eng block">Snack-size candy bar for Mia</span><span class="lang-jpn hidden">ミア用の一口チョコバー</span></label></li>
+                                <li class="flex items-start"><input type="checkbox" id="mat-3-w5" class="material-checkbox mt-1 w-5 h-5 mr-3 accent-orange-500 cursor-pointer"> <label for="mat-3-w5" class="cursor-pointer"><span class="lang-eng block">Plates</span><span class="lang-jpn hidden">お皿</span></label></li>
                             </ul>
                         </div>
-                        <div class="bg-white p-8 rounded-2xl border-2 border-slate-200 shadow-sm col-span-2 flex flex-col justify-between">
+                        <div class="bg-white p-6 md:p-8 rounded-2xl border-2 border-slate-200 shadow-sm col-span-1 lg:col-span-2 flex flex-col justify-between">
                             <div>
                                 <h3 class="text-xl font-black text-blue-900 uppercase tracking-wider mb-6"><span class="lang-eng block">The Mission: Candy Bar Core Sample</span><span class="lang-jpn hidden">ミッション: キャンディバーで地層実験</span></h3>
-                                <div class="lang-eng block space-y-6 text-slate-700 font-medium text-[1.05rem] leading-snug">
+                                <div class="lang-eng block space-y-6 text-slate-700 font-medium text-base md:text-[1.05rem] leading-snug">
                                     <p><span class="font-bold text-blue-900">Step 1 (Inspecting Layers):</span> Look at a Milky Way/3 Musketeers bar. The hard chocolate outside is the Earth's hard Crust. The soft caramel inside is the squishy Mantle.</p>
                                     <p><span class="font-bold text-blue-900">Step 2 (The Divergent Pull):</span> Have Ari hold both ends and pull outward very slowly. The chocolate crust will crack and separate, revealing the sticky caramel mantle stretching underneath.</p>
                                     <p><span class="font-bold text-blue-900">Step 3 (The Convergent Crash):</span> Have him slowly push the two ends back together. The cracked chocolate crust will slide against itself, buckle, and fold upward into a distinct ridge.</p>
                                 </div>
-                                <div class="lang-jpn hidden space-y-6 text-slate-700 font-medium text-[1.05rem] leading-snug">
+                                <div class="lang-jpn hidden space-y-6 text-slate-700 font-medium text-base md:text-[1.05rem] leading-snug">
                                     <p><span class="font-bold text-blue-900">ステップ 1 (地層の観察):</span> チョコバーを見てみよう。外側の硬いチョコレートは地球の硬い「地殻」です。中の柔らかいキャラメルはドロドロの「マントル」です。</p>
                                     <p><span class="font-bold text-blue-900">ステップ 2 (引っ張って離す):</span> 両端を持って、ゆっくりと外側に引っ張ります。チョコレートの地殻がひび割れて離れ、下からネバネバしたキャラメルのマントルが伸びて見えてきます。</p>
                                     <p><span class="font-bold text-blue-900">ステップ 3 (押しつぶす):</span> 今度はゆっくりと両端を押し戻します。ひび割れたチョコレートの地殻がぶつかり合い、歪んで、上に盛り上がって山脈ができます。</p>
@@ -514,8 +513,8 @@
                             </div>
                             <div class="mt-8 bg-blue-50 border-l-4 border-orange-400 p-5 rounded-r-xl">
                                 <h3 class="text-lg font-black text-blue-900 uppercase tracking-wider mb-2 flex items-center"><span class="text-xl mr-2">👧🏻</span><span class="lang-eng block">Mia's Target: Parallel Candy Testing</span><span class="lang-jpn hidden">ミアの任務: 平行キャンディ実験</span></h3>
-                                <p class="lang-eng block text-blue-800 font-medium">Hand Mia her own snack-size candy bar on her own plate. She is the "Structural Strength Tester." She smushes, pulls, and eats her candy right next to Ari so she leaves his model alone.</p>
-                                <p class="lang-jpn hidden text-blue-800 font-medium">ミア専用のお皿と一口サイズのチョコバーを渡します。彼女は「構造強度テスター」です。アリの隣で自分のチョコバーを潰したり、引っ張ったりして、アリの実験の邪魔をしないようにします。</p>
+                                <p class="lang-eng block text-blue-800 font-medium text-sm md:text-base">Hand Mia her own snack-size candy bar on her own plate. She is the "Structural Strength Tester." She smushes, pulls, and eats her candy right next to Ari so she leaves his model alone.</p>
+                                <p class="lang-jpn hidden text-blue-800 font-medium text-sm md:text-base">ミア専用のお皿と一口サイズのチョコバーを渡します。彼女は「構造強度テスター」です。アリの隣で自分のチョコバーを潰したり、引っ張ったりして、アリの実験の邪魔をしないようにします。</p>
                             </div>
                         </div>
                     </div>
@@ -526,7 +525,7 @@
                             <div class="lang-eng block"><h4 class="font-bold text-orange-800 mb-1">The Drawing</h4><p class="text-orange-900 font-medium text-sm">Draw the candy bar under two conditions: pulled apart (lines indicating cracks), and pushed together (bumped ridge in the middle).</p></div>
                             <div class="lang-jpn hidden"><h4 class="font-bold text-orange-800 mb-1">お絵かき</h4><p class="text-orange-900 font-medium text-sm">キャンディバーの2つの状態を描きます。引っ張った状態（ひび割れの線）と、押しつぶした状態（真ん中が盛り上がった山脈）です。</p></div>
                             
-                            <div class="border-l-2 border-orange-200 pl-6"><h4 class="font-bold text-orange-800 mb-1">The Labeling Targets</h4><p class="lang-eng block text-orange-900 font-bold text-lg"><span class="text-sm font-black mr-2 text-orange-700">ENG:</span> Crust, Mantle, Plates</p><p class="lang-jpn hidden text-orange-900 font-bold text-lg"><span class="text-sm font-black mr-2 text-orange-700">JPN:</span> ちきゅう, プレート</p></div>
+                            <div class="border-t-2 md:border-t-0 md:border-l-2 border-orange-200 pt-4 md:pt-0 md:pl-6"><h4 class="font-bold text-orange-800 mb-1">The Labeling Targets</h4><p class="lang-eng block text-orange-900 font-bold text-lg"><span class="text-sm font-black mr-2 text-orange-700">ENG:</span> Crust, Mantle, Plates</p><p class="lang-jpn hidden text-orange-900 font-bold text-lg"><span class="text-sm font-black mr-2 text-orange-700">JPN:</span> ちきゅう, プレート</p></div>
                         </div>
                     </div>
 
@@ -541,11 +540,11 @@
                     </div>
 
                     <div class="mt-12 pt-8 border-t-4 border-slate-300 border-dashed">
-                        <h3 class="text-2xl font-black text-slate-400 uppercase tracking-wider mb-6 flex items-center"><span class="mr-3">🔒</span><span class="lang-eng block">Captain's Log (Parent's Guide)</span><span class="lang-jpn hidden">キャプテンの記録（保護者向け）</span></h3>
+                        <h3 class="text-xl md:text-2xl font-black text-slate-400 uppercase tracking-wider mb-6 flex items-center"><span class="mr-3">🔒</span><span class="lang-eng block">Captain's Log (Parent's Guide)</span><span class="lang-jpn hidden">キャプテンの記録（保護者向け）</span></h3>
                         <div class="space-y-4">
                             <details class="group bg-slate-200 rounded-xl overflow-hidden border-2 border-slate-300">
-                                <summary class="p-5 font-black text-slate-600 uppercase tracking-wider cursor-pointer hover:bg-slate-300 flex justify-between items-center transition-colors"><span class="lang-eng block">Cheat Sheet Q&A</span><span class="lang-jpn hidden">よくある質問と答え</span><span class="text-xl group-open:rotate-180 transition-transform">▼</span></summary>
-                                <div class="p-6 bg-white border-t-2 border-slate-300 text-slate-700 font-medium space-y-6">
+                                <summary class="p-4 md:p-5 font-black text-slate-600 text-sm md:text-base uppercase tracking-wider cursor-pointer hover:bg-slate-300 flex justify-between items-center transition-colors"><span class="lang-eng block">Cheat Sheet Q&A</span><span class="lang-jpn hidden">よくある質問と答え</span><span class="text-xl group-open:rotate-180 transition-transform">▼</span></summary>
+                                <div class="p-4 md:p-6 bg-white border-t-2 border-slate-300 text-slate-700 font-medium space-y-6 text-sm md:text-base">
                                     <div class="lang-eng block">
                                         <p class="font-bold text-blue-900 mb-1">Ari: "Are we moving on a puzzle piece right now?"</p><p class="text-slate-600 bg-slate-50 p-3 rounded border border-slate-200"><span class="font-bold text-orange-600">Your Answer:</span> "We sure are! We are riding on the North American Plate. It moves at the exact same speed your fingernails grow."</p>
                                     </div>
@@ -563,40 +562,34 @@
                         </div>
                     </div>
                 </div>
-                ```
 
-***
-
-### Part 3: Weeks 6-8 and Interactive Engine
-
-```html
                 <div id="week-6" class="week-content hidden space-y-10">
-                    <div class="bg-white p-8 rounded-2xl border-4 border-blue-100 shadow-md">
-                        <h2 class="text-4xl font-black text-blue-900 uppercase tracking-tight"><span class="lang-eng block">Week 6: Deep Ocean Eruption</span><span class="lang-jpn hidden">第6週: 深海の噴火</span></h2>
-                        <p class="text-blue-600 mt-2 text-lg font-medium">Mission Code: Hydrothermal Vent Science | Focus: Fluid dynamics and thermal density (Why hot liquid rises up).</p>
+                    <div class="bg-white p-6 md:p-8 rounded-2xl border-4 border-blue-100 shadow-md">
+                        <h2 class="text-3xl md:text-4xl font-black text-blue-900 uppercase tracking-tight"><span class="lang-eng block">Week 6: Deep Ocean Eruption</span><span class="lang-jpn hidden">第6週: 深海の噴火</span></h2>
+                        <p class="text-blue-600 mt-2 text-base md:text-lg font-medium">Mission Code: Hydrothermal Vent Science | Focus: Fluid dynamics and thermal density (Why hot liquid rises up).</p>
                     </div>
 
-                    <div class="flex items-start space-x-6">
+                    <div class="flex flex-col md:flex-row items-center md:items-start gap-4 md:gap-0 md:space-x-6">
                         <div class="w-20 h-20 bg-blue-200 rounded-full flex items-center justify-center border-4 border-white shadow-md shrink-0 text-3xl">🐧</div>
-                        <div class="bg-white p-6 rounded-2xl rounded-tl-none border-2 border-slate-200 shadow-md relative flex-1">
-                            <div class="absolute top-0 left-[-10px] w-0 h-0 border-t-[15px] border-t-white border-l-[15px] border-l-transparent"></div>
+                        <div class="bg-white p-6 rounded-2xl md:rounded-tl-none border-2 border-slate-200 shadow-md relative flex-1 w-full">
+                            <div class="hidden md:block absolute top-0 left-[-10px] w-0 h-0 border-t-[15px] border-t-white border-l-[15px] border-l-transparent"></div>
                             <h3 class="font-black text-blue-900 uppercase tracking-wider mb-4 text-lg"><span class="lang-eng block">Captain's Briefing</span><span class="lang-jpn hidden">キャプテンの指令</span></h3>
-                            <div class="lang-eng block"><p class="text-slate-700 font-medium text-lg leading-relaxed">"Octo-Alert! Peso and Kwazii have steered the heavy Gup-X all the way down into the deepest, darkest trenches of the ocean. Down there, it is freezing cold, but they just discovered a hidden volcano shooting super-heated red water straight up into the sea! Tweak needs you to build a miniature deep-sea tank in the lab to study how this hot volcanic fluid moves through the freezing ocean!"</p></div>
-                            <div class="lang-jpn hidden"><p class="text-slate-700 font-medium text-lg leading-relaxed">「オクトアラート発令！ペソとクワジーが大型メカのガップXを操縦して、一番深くて暗い深海へと潜航したぞ。そこは氷のように冷たい世界だが、熱水の噴出する海底火山を発見したんだ！トゥイークが、その熱い火山水が冷たい海の中をどう動くのか実験室にミニチュアの深海タンクを作って調査してほしいと頼んできたぞ。データ収集開始だ！」</p></div>
+                            <div class="lang-eng block"><p class="text-slate-700 font-medium text-base md:text-lg leading-relaxed">"Octo-Alert! Peso and Kwazii have steered the heavy Gup-X all the way down into the deepest, darkest trenches of the ocean. Down there, it is freezing cold, but they just discovered a hidden volcano shooting super-heated red water straight up into the sea! Tweak needs you to build a miniature deep-sea tank in the lab to study how this hot volcanic fluid moves through the freezing ocean!"</p></div>
+                            <div class="lang-jpn hidden"><p class="text-slate-700 font-medium text-base md:text-lg leading-relaxed">「オクトアラート発令！ペソとクワジーが大型メカのガップXを操縦して、一番深くて暗い深海へと潜航したぞ。そこは氷のように冷たい世界だが、熱水の噴出する海底火山を発見したんだ！トゥイークが、その熱い火山水が冷たい海の中をどう動くのか実験室にミニチュアの深海タンクを作って調査してほしいと頼んできたぞ。データ収集開始だ！」</p></div>
                         </div>
                     </div>
 
-                    <div class="bg-blue-600 p-8 rounded-2xl shadow-md text-white border-4 border-blue-500">
+                    <div class="bg-blue-600 p-6 md:p-8 rounded-2xl shadow-md text-white border-4 border-blue-500">
                         <h3 class="text-xl font-black uppercase tracking-wider mb-6 flex items-center"><span class="mr-2">💡</span><span class="lang-eng block">Core Concepts</span><span class="lang-jpn hidden">重要コンセプト</span></h3>
                         <div class="lang-eng block space-y-4">
-                            <p class="text-lg"><span class="font-bold text-white border-b-2 border-orange-400">Undersea Volcanoes:</span> Thousands of active volcanic vents are hidden at the bottom of the ocean.</p>
-                            <p class="text-lg"><span class="font-bold text-white border-b-2 border-orange-400">Hydrothermal Vents:</span> Deep-sea geysers where water gets heated by magma and shoots out.</p>
-                            <p class="text-lg"><span class="font-bold text-white border-b-2 border-orange-400">Thermal Density:</span> Hot water is lighter and less dense than cold water, so it races straight up. Cold water is heavy and tightly packed.</p>
+                            <p class="text-base md:text-lg"><span class="font-bold text-white border-b-2 border-orange-400">Undersea Volcanoes:</span> Thousands of active volcanic vents are hidden at the bottom of the ocean.</p>
+                            <p class="text-base md:text-lg"><span class="font-bold text-white border-b-2 border-orange-400">Hydrothermal Vents:</span> Deep-sea geysers where water gets heated by magma and shoots out.</p>
+                            <p class="text-base md:text-lg"><span class="font-bold text-white border-b-2 border-orange-400">Thermal Density:</span> Hot water is lighter and less dense than cold water, so it races straight up. Cold water is heavy and tightly packed.</p>
                         </div>
                         <div class="lang-jpn hidden space-y-4">
-                            <p class="text-lg"><span class="font-bold text-white border-b-2 border-orange-400">海底火山:</span> 海の底には、何千もの活発な火山の噴出孔が隠されています。</p>
-                            <p class="text-lg"><span class="font-bold text-white border-b-2 border-orange-400">熱水噴出孔:</span> マグマによって熱せられた水が噴き出す、深海の間欠泉です。</p>
-                            <p class="text-lg"><span class="font-bold text-white border-b-2 border-orange-400">熱対流 (密度の違い):</span> お湯は冷たい水よりも軽くて密度が低いため、まっすぐ上に登っていきます。冷たい水は重く、ギュッと詰まっています。</p>
+                            <p class="text-base md:text-lg"><span class="font-bold text-white border-b-2 border-orange-400">海底火山:</span> 海の底には、何千もの活発な火山の噴出孔が隠されています。</p>
+                            <p class="text-base md:text-lg"><span class="font-bold text-white border-b-2 border-orange-400">熱水噴出孔:</span> マグマによって熱せられた水が噴き出す、深海の間欠泉です。</p>
+                            <p class="text-base md:text-lg"><span class="font-bold text-white border-b-2 border-orange-400">熱対流 (密度の違い):</span> お湯は冷たい水よりも軽くて密度が低いため、まっすぐ上に登っていきます。冷たい水は重く、ギュッと詰まっています。</p>
                         </div>
                     </div>
 
@@ -604,25 +597,25 @@
                         <div class="bg-white p-6 rounded-2xl border-2 border-slate-200 shadow-sm col-span-1">
                             <h3 class="text-xl font-black text-blue-900 uppercase tracking-wider mb-6"><span class="lang-eng block">Materials</span><span class="lang-jpn hidden">必要なもの</span></h3>
                             <ul class="space-y-4 text-slate-700 font-bold text-sm">
-                                <li class="flex items-start"><input type="checkbox" id="mat-1-w6" class="mt-1 w-5 h-5 mr-3 accent-orange-500 cursor-pointer"> <label for="mat-1-w6" class="cursor-pointer"><span class="lang-eng block">Large clear container/pitcher</span><span class="lang-jpn hidden">大きくて透明な容器/ピッチャー</span></label></li>
-                                <li class="flex items-start"><input type="checkbox" id="mat-2-w6" class="mt-1 w-5 h-5 mr-3 accent-orange-500 cursor-pointer"> <label for="mat-2-w6" class="cursor-pointer"><span class="lang-eng block">Ice cubes</span><span class="lang-jpn hidden">氷</span></label></li>
-                                <li class="flex items-start"><input type="checkbox" id="mat-3-w6" class="mt-1 w-5 h-5 mr-3 accent-orange-500 cursor-pointer"> <label for="mat-3-w6" class="cursor-pointer"><span class="lang-eng block">Tiny glass jar</span><span class="lang-jpn hidden">小さなガラスの小瓶</span></label></li>
-                                <li class="flex items-start"><input type="checkbox" id="mat-4-w6" class="mt-1 w-5 h-5 mr-3 accent-orange-500 cursor-pointer"> <label for="mat-4-w6" class="cursor-pointer"><span class="lang-eng block">Hot tap water & Red food coloring</span><span class="lang-jpn hidden">お湯と赤い食紅</span></label></li>
-                                <li class="flex items-start"><input type="checkbox" id="mat-5-w6" class="mt-1 w-5 h-5 mr-3 accent-orange-500 cursor-pointer"> <label for="mat-5-w6" class="cursor-pointer"><span class="lang-eng block">Aluminum foil & Rubber band</span><span class="lang-jpn hidden">アルミホイルと輪ゴム</span></label></li>
-                                <li class="flex items-start"><input type="checkbox" id="mat-6-w6" class="mt-1 w-5 h-5 mr-3 accent-orange-500 cursor-pointer"> <label for="mat-6-w6" class="cursor-pointer"><span class="lang-eng block">Toothpick</span><span class="lang-jpn hidden">爪楊枝</span></label></li>
+                                <li class="flex items-start"><input type="checkbox" id="mat-1-w6" class="material-checkbox mt-1 w-5 h-5 mr-3 accent-orange-500 cursor-pointer"> <label for="mat-1-w6" class="cursor-pointer"><span class="lang-eng block">Large clear container/pitcher</span><span class="lang-jpn hidden">大きくて透明な容器/ピッチャー</span></label></li>
+                                <li class="flex items-start"><input type="checkbox" id="mat-2-w6" class="material-checkbox mt-1 w-5 h-5 mr-3 accent-orange-500 cursor-pointer"> <label for="mat-2-w6" class="cursor-pointer"><span class="lang-eng block">Ice cubes</span><span class="lang-jpn hidden">氷</span></label></li>
+                                <li class="flex items-start"><input type="checkbox" id="mat-3-w6" class="material-checkbox mt-1 w-5 h-5 mr-3 accent-orange-500 cursor-pointer"> <label for="mat-3-w6" class="cursor-pointer"><span class="lang-eng block">Tiny glass jar</span><span class="lang-jpn hidden">小さなガラスの小瓶</span></label></li>
+                                <li class="flex items-start"><input type="checkbox" id="mat-4-w6" class="material-checkbox mt-1 w-5 h-5 mr-3 accent-orange-500 cursor-pointer"> <label for="mat-4-w6" class="cursor-pointer"><span class="lang-eng block">Hot tap water & Red food coloring</span><span class="lang-jpn hidden">お湯と赤い食紅</span></label></li>
+                                <li class="flex items-start"><input type="checkbox" id="mat-5-w6" class="material-checkbox mt-1 w-5 h-5 mr-3 accent-orange-500 cursor-pointer"> <label for="mat-5-w6" class="cursor-pointer"><span class="lang-eng block">Aluminum foil & Rubber band</span><span class="lang-jpn hidden">アルミホイルと輪ゴム</span></label></li>
+                                <li class="flex items-start"><input type="checkbox" id="mat-6-w6" class="material-checkbox mt-1 w-5 h-5 mr-3 accent-orange-500 cursor-pointer"> <label for="mat-6-w6" class="cursor-pointer"><span class="lang-eng block">Toothpick</span><span class="lang-jpn hidden">爪楊枝</span></label></li>
                             </ul>
                         </div>
-                        <div class="bg-white p-8 rounded-2xl border-2 border-slate-200 shadow-sm col-span-2 flex flex-col justify-between">
+                        <div class="bg-white p-6 md:p-8 rounded-2xl border-2 border-slate-200 shadow-sm col-span-1 lg:col-span-2 flex flex-col justify-between">
                             <div>
                                 <h3 class="text-xl font-black text-blue-900 uppercase tracking-wider mb-6"><span class="lang-eng block">The Mission: Midnight Zone Plume</span><span class="lang-jpn hidden">ミッション: 深海の熱水噴出孔</span></h3>
-                                <div class="lang-eng block space-y-6 text-slate-700 font-medium text-[1.05rem] leading-snug">
+                                <div class="lang-eng block space-y-6 text-slate-700 font-medium text-base md:text-[1.05rem] leading-snug">
                                     <p><span class="font-bold text-blue-900">Step 1 (Deep Ocean Layer):</span> Fill a large clear container with water and ice cubes. This is the freezing Midnight Zone.</p>
                                     <p><span class="font-bold text-blue-900">Step 2 (Magma Tank):</span> Fill a tiny glass jar to the brim with hot tap water and red food coloring.</p>
                                     <p><span class="font-bold text-blue-900">Step 3 (Sealing the Vent):</span> Cover the top of the tiny glass jar tightly with aluminum foil and seal it with a rubber band.</p>
                                     <p><span class="font-bold text-blue-900">Step 4 (Deployment):</span> Lower the tiny jar so it sits flat at the bottom of the large ice water container.</p>
                                     <p><span class="font-bold text-blue-900">Step 5 (The Eruption):</span> Hand Ari a toothpick. Poke one clean hole right through the center of the aluminum foil. The hot red water will shoot upward in a swirling plume.</p>
                                 </div>
-                                <div class="lang-jpn hidden space-y-6 text-slate-700 font-medium text-[1.05rem] leading-snug">
+                                <div class="lang-jpn hidden space-y-6 text-slate-700 font-medium text-base md:text-[1.05rem] leading-snug">
                                     <p><span class="font-bold text-blue-900">ステップ 1 (深海層):</span> 大きな透明な容器に水と氷を入れます。これが氷のように冷たい深海（ミッドナイトゾーン）です。</p>
                                     <p><span class="font-bold text-blue-900">ステップ 2 (マグマタンク):</span> 小さなガラスの小瓶のギリギリまでお湯を入れ、赤い食紅を混ぜます。</p>
                                     <p><span class="font-bold text-blue-900">ステップ 3 (噴出孔の封印):</span> 小瓶の口をアルミホイルでしっかりと覆い、輪ゴムで留めます。</p>
@@ -632,8 +625,8 @@
                             </div>
                             <div class="mt-8 bg-blue-50 border-l-4 border-orange-400 p-5 rounded-r-xl">
                                 <h3 class="text-lg font-black text-blue-900 uppercase tracking-wider mb-2 flex items-center"><span class="text-xl mr-2">👧🏻</span><span class="lang-eng block">Mia's Target: Ice Command Officer</span><span class="lang-jpn hidden">ミアの任務: 氷の監視員</span></h3>
-                                <p class="lang-eng block text-blue-800 font-medium">Mia sits next to the container and uses tongs to safely drop extra ice cubes into the top of the large container, keeping the ocean water freezing cold so the plume rises faster.</p>
-                                <p class="lang-jpn hidden text-blue-800 font-medium">ミアは容器の隣に座り、トングを使って大きな容器の中に氷を追加で落とします。海水を氷のように冷たく保つことで、赤いマグマがより速く上に登るようにサポートします。</p>
+                                <p class="lang-eng block text-blue-800 font-medium text-sm md:text-base">Mia sits next to the container and uses tongs to safely drop extra ice cubes into the top of the large container, keeping the ocean water freezing cold so the plume rises faster.</p>
+                                <p class="lang-jpn hidden text-blue-800 font-medium text-sm md:text-base">ミアは容器の隣に座り、トングを使って大きな容器の中に氷を追加で落とします。海水を氷のように冷たく保つことで、赤いマグマがより速く上に登るようにサポートします。</p>
                             </div>
                         </div>
                     </div>
@@ -644,7 +637,7 @@
                             <div class="lang-eng block"><h4 class="font-bold text-orange-800 mb-1">The Drawing</h4><p class="text-orange-900 font-medium text-sm">Draw the tall container showing the clear water, the tiny jar at the bottom, and the twisting red currents blasting out of the foil top.</p></div>
                             <div class="lang-jpn hidden"><h4 class="font-bold text-orange-800 mb-1">お絵かき</h4><p class="text-orange-900 font-medium text-sm">背の高い透明な水槽と、底にある小さな瓶、そしてアルミホイルから噴き出して渦巻く赤い水流を描きます。</p></div>
                             
-                            <div class="border-l-2 border-orange-200 pl-6"><h4 class="font-bold text-orange-800 mb-1">The Labeling Targets</h4><p class="lang-eng block text-orange-900 font-bold text-lg"><span class="text-sm font-black mr-2 text-orange-700">ENG:</span> Ocean, Vent, Hot</p><p class="lang-jpn hidden text-orange-900 font-bold text-lg"><span class="text-sm font-black mr-2 text-orange-700">JPN:</span> うみ, かいざん</p></div>
+                            <div class="border-t-2 md:border-t-0 md:border-l-2 border-orange-200 pt-4 md:pt-0 md:pl-6"><h4 class="font-bold text-orange-800 mb-1">The Labeling Targets</h4><p class="lang-eng block text-orange-900 font-bold text-lg"><span class="text-sm font-black mr-2 text-orange-700">ENG:</span> Ocean, Vent, Hot</p><p class="lang-jpn hidden text-orange-900 font-bold text-lg"><span class="text-sm font-black mr-2 text-orange-700">JPN:</span> うみ, かいざん</p></div>
                         </div>
                     </div>
 
@@ -659,11 +652,11 @@
                     </div>
 
                     <div class="mt-12 pt-8 border-t-4 border-slate-300 border-dashed">
-                        <h3 class="text-2xl font-black text-slate-400 uppercase tracking-wider mb-6 flex items-center"><span class="mr-3">🔒</span><span class="lang-eng block">Captain's Log (Parent's Guide)</span><span class="lang-jpn hidden">キャプテンの記録（保護者向け）</span></h3>
+                        <h3 class="text-xl md:text-2xl font-black text-slate-400 uppercase tracking-wider mb-6 flex items-center"><span class="mr-3">🔒</span><span class="lang-eng block">Captain's Log (Parent's Guide)</span><span class="lang-jpn hidden">キャプテンの記録（保護者向け）</span></h3>
                         <div class="space-y-4">
                             <details class="group bg-slate-200 rounded-xl overflow-hidden border-2 border-slate-300">
-                                <summary class="p-5 font-black text-slate-600 uppercase tracking-wider cursor-pointer hover:bg-slate-300 flex justify-between items-center transition-colors"><span class="lang-eng block">Cheat Sheet Q&A</span><span class="lang-jpn hidden">よくある質問と答え</span><span class="text-xl group-open:rotate-180 transition-transform">▼</span></summary>
-                                <div class="p-6 bg-white border-t-2 border-slate-300 text-slate-700 font-medium space-y-6">
+                                <summary class="p-4 md:p-5 font-black text-slate-600 text-sm md:text-base uppercase tracking-wider cursor-pointer hover:bg-slate-300 flex justify-between items-center transition-colors"><span class="lang-eng block">Cheat Sheet Q&A</span><span class="lang-jpn hidden">よくある質問と答え</span><span class="text-xl group-open:rotate-180 transition-transform">▼</span></summary>
+                                <div class="p-4 md:p-6 bg-white border-t-2 border-slate-300 text-slate-700 font-medium space-y-6 text-sm md:text-base">
                                     <div class="lang-eng block">
                                         <p class="font-bold text-blue-900 mb-1">Ari: "Why does the red water stay together instead of mixing instantly?"</p><p class="text-slate-600 bg-slate-50 p-3 rounded border border-slate-200"><span class="font-bold text-orange-600">Your Answer:</span> "The cold water molecules are packed tightly together like a wall, forcing the lighter, faster hot water to slide straight up through them in a tight line."</p>
                                     </div>
@@ -683,30 +676,30 @@
                 </div>
 
                 <div id="week-7" class="week-content hidden space-y-10">
-                    <div class="bg-white p-8 rounded-2xl border-4 border-blue-100 shadow-md">
-                        <h2 class="text-4xl font-black text-blue-900 uppercase tracking-tight"><span class="lang-eng block">Week 7: Lava Routing</span><span class="lang-jpn hidden">第7週: 溶岩ルートの設計</span></h2>
-                        <p class="text-blue-600 mt-2 text-lg font-medium">Mission Code: Fluid Dynamics & Strategic Civil Engineering | Focus: Resource optimization, constraint-based routing, and viscosity.</p>
+                    <div class="bg-white p-6 md:p-8 rounded-2xl border-4 border-blue-100 shadow-md">
+                        <h2 class="text-3xl md:text-4xl font-black text-blue-900 uppercase tracking-tight"><span class="lang-eng block">Week 7: Lava Routing</span><span class="lang-jpn hidden">第7週: 溶岩ルートの設計</span></h2>
+                        <p class="text-blue-600 mt-2 text-base md:text-lg font-medium">Mission Code: Fluid Dynamics & Strategic Civil Engineering | Focus: Resource optimization, constraint-based routing, and viscosity.</p>
                     </div>
 
-                    <div class="flex items-start space-x-6">
+                    <div class="flex flex-col md:flex-row items-center md:items-start gap-4 md:gap-0 md:space-x-6">
                         <div class="w-20 h-20 bg-blue-200 rounded-full flex items-center justify-center border-4 border-white shadow-md shrink-0 overflow-hidden"><img src="Barnacles_vector_profile_29.webp" class="w-full h-full object-cover"></div>
-                        <div class="bg-white p-6 rounded-2xl rounded-tl-none border-2 border-slate-200 shadow-md relative flex-1">
-                            <div class="absolute top-0 left-[-10px] w-0 h-0 border-t-[15px] border-t-white border-l-[15px] border-l-transparent"></div>
+                        <div class="bg-white p-6 rounded-2xl md:rounded-tl-none border-2 border-slate-200 shadow-md relative flex-1 w-full">
+                            <div class="hidden md:block absolute top-0 left-[-10px] w-0 h-0 border-t-[15px] border-t-white border-l-[15px] border-l-transparent"></div>
                             <h3 class="font-black text-blue-900 uppercase tracking-wider mb-4 text-lg"><span class="lang-eng block">Captain's Briefing</span><span class="lang-jpn hidden">キャプテンの指令</span></h3>
-                            <div class="lang-eng block"><p class="text-slate-700 font-medium text-lg leading-relaxed">"Sound the Octo-Alert! Cadet Ari, we have a double-crisis. A massive lava flow is heading down the mountain, but Tweak's workshop is running low on supplies—you only have exactly 3 defensive barrier panels left in inventory! To make matters worse, Kwazii foolishly parked the Gup-B on the left side of the valley, and the Vegimal village is right in the center! You cannot just push the lava off the sides. Your mission is to engineer a zig-zag canyon path using only your 3 panels to steer the lava completely away from Kwazii and the village, routing it safely into the empty ocean drop-zone at the bottom right!"</p></div>
-                            <div class="lang-jpn hidden"><p class="text-slate-700 font-medium text-lg leading-relaxed">「オクトアラート発令！アリ新隊員、二重の危機が発生したぞ。巨大な溶岩が山を下ってきているが、トゥイークの工場は資材が不足している。使える防護壁パネルは、正確に3枚だけだ！ さらに悪いことに、クワジーが谷の左側にガップBをうっかり駐車してしまい、ベジマルの村はちょうど真ん中にある！ 溶岩をただ横に流すだけではダメだ。3枚のパネルだけを使い、ジグザグの通り道（キャニオン）を設計しろ！溶岩をクワジーと村から完全に遠ざけ、右下の『安全な海』へと誘導するんだ！」</p></div>
+                            <div class="lang-eng block"><p class="text-slate-700 font-medium text-base md:text-lg leading-relaxed">"Sound the Octo-Alert! Cadet Ari, we have a double-crisis. A massive lava flow is heading down the mountain, but Tweak's workshop is running low on supplies—you only have exactly 3 defensive barrier panels left in inventory! To make matters worse, Kwazii foolishly parked the Gup-B on the left side of the valley, and the Vegimal village is right in the center! You cannot just push the lava off the sides. Your mission is to engineer a zig-zag canyon path using only your 3 panels to steer the lava completely away from Kwazii and the village, routing it safely into the empty ocean drop-zone at the bottom right!"</p></div>
+                            <div class="lang-jpn hidden"><p class="text-slate-700 font-medium text-base md:text-lg leading-relaxed">「オクトアラート発令！アリ新隊員、二重の危機が発生したぞ。巨大な溶岩が山を下ってきているが、トゥイークの工場は資材が不足している。使える防護壁パネルは、正確に3枚だけだ！ さらに悪いことに、クワジーが谷の左側にガップBをうっかり駐車してしまい、ベジマルの村はちょうど真ん中にある！ 溶岩をただ横に流すだけではダメだ。3枚のパネルだけを使い、ジグザグの通り道（キャニオン）を設計しろ！溶岩をクワジーと村から完全に遠ざけ、右下の『安全な海』へと誘導するんだ！」</p></div>
                         </div>
                     </div>
 
-                    <div class="bg-blue-600 p-8 rounded-2xl shadow-md text-white border-4 border-blue-500">
+                    <div class="bg-blue-600 p-6 md:p-8 rounded-2xl shadow-md text-white border-4 border-blue-500">
                         <h3 class="text-xl font-black uppercase tracking-wider mb-6 flex items-center"><span class="mr-2">💡</span><span class="lang-eng block">Core Concepts</span><span class="lang-jpn hidden">重要コンセプト</span></h3>
                         <div class="lang-eng block space-y-4">
-                            <p class="text-lg"><span class="font-bold text-white border-b-2 border-orange-400">Viscosity:</span> A liquid's thickness. Water has low viscosity (fast). Syrup/lava has high viscosity (slow).</p>
-                            <p class="text-lg"><span class="font-bold text-white border-b-2 border-orange-400">Lava Diversion:</span> You cannot stop a lava flow by blocking it straight on. Engineers build angled walls to let gravity gently guide the liquid away from homes.</p>
+                            <p class="text-base md:text-lg"><span class="font-bold text-white border-b-2 border-orange-400">Viscosity:</span> A liquid's thickness. Water has low viscosity (fast). Syrup/lava has high viscosity (slow).</p>
+                            <p class="text-base md:text-lg"><span class="font-bold text-white border-b-2 border-orange-400">Lava Diversion:</span> You cannot stop a lava flow by blocking it straight on. Engineers build angled walls to let gravity gently guide the liquid away from homes.</p>
                         </div>
                         <div class="lang-jpn hidden space-y-4">
-                            <p class="text-lg"><span class="font-bold text-white border-b-2 border-orange-400">粘性 (Viscosity):</span> 液体のドロドロ具合のこと。水は粘性が低く（速い）、シロップや溶岩は粘性が高い（遅い）です。</p>
-                            <p class="text-lg"><span class="font-bold text-white border-b-2 border-orange-400">流路変更 (Lava Diversion):</span> 溶岩の正面に壁を作って止めることはできません。エンジニアは斜めに壁を作り、重力を利用して液体を家から優しくそらします。</p>
+                            <p class="text-base md:text-lg"><span class="font-bold text-white border-b-2 border-orange-400">粘性 (Viscosity):</span> 液体のドロドロ具合のこと。水は粘性が低く（速い）、シロップや溶岩は粘性が高い（遅い）です。</p>
+                            <p class="text-base md:text-lg"><span class="font-bold text-white border-b-2 border-orange-400">流路変更 (Lava Diversion):</span> 溶岩の正面に壁を作って止めることはできません。エンジニアは斜めに壁を作り、重力を利用して液体を家から優しくそらします。</p>
                         </div>
                     </div>
 
@@ -714,24 +707,24 @@
                         <div class="bg-white p-6 rounded-2xl border-2 border-slate-200 shadow-sm col-span-1">
                             <h3 class="text-xl font-black text-blue-900 uppercase tracking-wider mb-6"><span class="lang-eng block">Materials</span><span class="lang-jpn hidden">必要なもの</span></h3>
                             <ul class="space-y-4 text-slate-700 font-bold text-sm">
-                                <li class="flex items-start"><input type="checkbox" id="mat-1-w7" class="mt-1 w-5 h-5 mr-3 accent-orange-500 cursor-pointer"> <label for="mat-1-w7" class="cursor-pointer"><span class="lang-eng block">Baking tray</span><span class="lang-jpn hidden">オーブントレイ（斜めにする）</span></label></li>
-                                <li class="flex items-start"><input type="checkbox" id="mat-2-w7" class="mt-1 w-5 h-5 mr-3 accent-orange-500 cursor-pointer"> <label for="mat-2-w7" class="cursor-pointer"><span class="lang-eng block">3 Legos, Toy car, Paper cup</span><span class="lang-jpn hidden">レゴ3個、ミニカー、紙コップ</span></label></li>
-                                <li class="flex items-start"><input type="checkbox" id="mat-3-w7" class="mt-1 w-5 h-5 mr-3 accent-orange-500 cursor-pointer"> <label for="mat-3-w7" class="cursor-pointer"><span class="lang-eng block">Exactly 3 popsicle sticks</span><span class="lang-jpn hidden">アイスの棒 ぴったり3本</span></label></li>
-                                <li class="flex items-start"><input type="checkbox" id="mat-4-w7" class="mt-1 w-5 h-5 mr-3 accent-orange-500 cursor-pointer"> <label for="mat-4-w7" class="cursor-pointer"><span class="lang-eng block">Syrup or slime</span><span class="lang-jpn hidden">シロップかスライム</span></label></li>
-                                <li class="flex items-start"><input type="checkbox" id="mat-5-w7" class="mt-1 w-5 h-5 mr-3 accent-orange-500 cursor-pointer"> <label for="mat-5-w7" class="cursor-pointer"><span class="lang-eng block">Water</span><span class="lang-jpn hidden">水</span></label></li>
+                                <li class="flex items-start"><input type="checkbox" id="mat-1-w7" class="material-checkbox mt-1 w-5 h-5 mr-3 accent-orange-500 cursor-pointer"> <label for="mat-1-w7" class="cursor-pointer"><span class="lang-eng block">Baking tray</span><span class="lang-jpn hidden">オーブントレイ（斜めにする）</span></label></li>
+                                <li class="flex items-start"><input type="checkbox" id="mat-2-w7" class="material-checkbox mt-1 w-5 h-5 mr-3 accent-orange-500 cursor-pointer"> <label for="mat-2-w7" class="cursor-pointer"><span class="lang-eng block">3 Legos, Toy car, Paper cup</span><span class="lang-jpn hidden">レゴ3個、ミニカー、紙コップ</span></label></li>
+                                <li class="flex items-start"><input type="checkbox" id="mat-3-w7" class="material-checkbox mt-1 w-5 h-5 mr-3 accent-orange-500 cursor-pointer"> <label for="mat-3-w7" class="cursor-pointer"><span class="lang-eng block">Exactly 3 popsicle sticks</span><span class="lang-jpn hidden">アイスの棒 ぴったり3本</span></label></li>
+                                <li class="flex items-start"><input type="checkbox" id="mat-4-w7" class="material-checkbox mt-1 w-5 h-5 mr-3 accent-orange-500 cursor-pointer"> <label for="mat-4-w7" class="cursor-pointer"><span class="lang-eng block">Syrup or slime</span><span class="lang-jpn hidden">シロップかスライム</span></label></li>
+                                <li class="flex items-start"><input type="checkbox" id="mat-5-w7" class="material-checkbox mt-1 w-5 h-5 mr-3 accent-orange-500 cursor-pointer"> <label for="mat-5-w7" class="cursor-pointer"><span class="lang-eng block">Water</span><span class="lang-jpn hidden">水</span></label></li>
                             </ul>
                         </div>
-                        <div class="bg-white p-8 rounded-2xl border-2 border-slate-200 shadow-sm col-span-2 flex flex-col justify-between">
+                        <div class="bg-white p-6 md:p-8 rounded-2xl border-2 border-slate-200 shadow-sm col-span-1 lg:col-span-2 flex flex-col justify-between">
                             <div>
                                 <h3 class="text-xl font-black text-blue-900 uppercase tracking-wider mb-6"><span class="lang-eng block">The Mission: The Board Layout</span><span class="lang-jpn hidden">ミッション: 溶岩ルート設計</span></h3>
-                                <div class="lang-eng block space-y-6 text-slate-700 font-medium text-[1.05rem] leading-snug">
+                                <div class="lang-eng block space-y-6 text-slate-700 font-medium text-base md:text-[1.05rem] leading-snug">
                                     <p><span class="font-bold text-blue-900">Step 1 (Setup):</span> Tilt a baking tray downhill. Place 3 Lego bricks in the lower middle (The Village). Place a toy car on the lower left edge (Kwazii). Place a paper cup at the bottom right corner (Ocean Goal).</p>
                                     <p><span class="font-bold text-blue-900">Step 2 (The Blueprint):</span> Hand Ari exactly 3 popsicle sticks. Let him position his sticks on the dry tray to build an angled routing network to bypass the center and left targets.</p>
                                     <p><span class="font-bold text-blue-900">Step 3 (Flow Analysis):</span> Pour thick syrup or slime at the top center. Watch the fluid interact with his walls.</p>
                                     <p><span class="font-bold text-blue-900">Step 4 (Viscosity Escalation):</span> Yell: <span class="italic">"The volcano is getting hotter! The lava is speeding up!"</span> Pour a splash of water right behind the syrup. Will his maze hold up to the fast low-viscosity fluid, or overtop the walls?</p>
                                     <p><span class="font-bold text-blue-900">Step 5 (Redesign):</span> Wipe the tray clean and let him adjust the angles based on the physics he just saw.</p>
                                 </div>
-                                <div class="lang-jpn hidden space-y-6 text-slate-700 font-medium text-[1.05rem] leading-snug">
+                                <div class="lang-jpn hidden space-y-6 text-slate-700 font-medium text-base md:text-[1.05rem] leading-snug">
                                     <p><span class="font-bold text-blue-900">ステップ 1 (準備):</span> トレイを斜めにします。レゴ3個を下の中央に（村）、ミニカーを左下に（クワジー）、紙コップを右下に（海・ゴール）置きます。</p>
                                     <p><span class="font-bold text-blue-900">ステップ 2 (設計図):</span> アリにアイスの棒を3本だけ渡します。乾いたトレイの上に棒を斜めに配置して、中央と左側を避けるルートを作らせます。</p>
                                     <p><span class="font-bold text-blue-900">ステップ 3 (流れの分析):</span> ドロドロのシロップやスライムを上から流し、液体が壁にどうぶつかるか観察します。</p>
@@ -741,8 +734,8 @@
                             </div>
                             <div class="mt-8 bg-blue-50 border-l-4 border-orange-400 p-5 rounded-r-xl">
                                 <h3 class="text-lg font-black text-blue-900 uppercase tracking-wider mb-2 flex items-center"><span class="text-xl mr-2">👧🏻</span><span class="lang-eng block">Mia's Target: Wildlife Evacuation Officer</span><span class="lang-jpn hidden">ミアの任務: 動物避難係</span></h3>
-                                <p class="lang-eng block text-blue-800 font-medium">Give Mia a handful of small plastic animals. Her mission is to safely pack up and "evacuate" her animals to a safe zone on a completely separate plate before the lava reaches the bottom of Ari's tray.</p>
-                                <p class="lang-jpn hidden text-blue-800 font-medium">ミアに小さなどうぶつのフィギュアを渡します。彼女の任務は、溶岩がアリのトレイの下にたどり着く前に、どうぶつたちを別の安全なお皿（避難所）へ移動させることです。</p>
+                                <p class="lang-eng block text-blue-800 font-medium text-sm md:text-base">Give Mia a handful of small plastic animals. Her mission is to safely pack up and "evacuate" her animals to a safe zone on a completely separate plate before the lava reaches the bottom of Ari's tray.</p>
+                                <p class="lang-jpn hidden text-blue-800 font-medium text-sm md:text-base">ミアに小さなどうぶつのフィギュアを渡します。彼女の任務は、溶岩がアリのトレイの下にたどり着く前に、どうぶつたちを別の安全なお皿（避難所）へ移動させることです。</p>
                             </div>
                         </div>
                     </div>
@@ -753,7 +746,7 @@
                             <div class="lang-eng block"><h4 class="font-bold text-orange-800 mb-1">The Drawing</h4><p class="text-orange-900 font-medium text-sm">Draw an overhead "blueprint" map view of the tray showing the village, angled stick barriers, and arrows for the fluid path.</p></div>
                             <div class="lang-jpn hidden"><h4 class="font-bold text-orange-800 mb-1">お絵かき</h4><p class="text-orange-900 font-medium text-sm">トレイを上から見た「設計図」を描きます。村、斜めに置いた棒の壁、そして液体が流れた道を矢印で描きましょう。</p></div>
                             
-                            <div class="border-l-2 border-orange-200 pl-6"><h4 class="font-bold text-orange-800 mb-1">The Labeling Targets</h4><p class="lang-eng block text-orange-900 font-bold text-lg"><span class="text-sm font-black mr-2 text-orange-700">ENG:</span> Lava, Wall, Divert</p><p class="lang-jpn hidden text-orange-900 font-bold text-lg"><span class="text-sm font-black mr-2 text-orange-700">JPN:</span> ようがん, かべ</p></div>
+                            <div class="border-t-2 md:border-t-0 md:border-l-2 border-orange-200 pt-4 md:pt-0 md:pl-6"><h4 class="font-bold text-orange-800 mb-1">The Labeling Targets</h4><p class="lang-eng block text-orange-900 font-bold text-lg"><span class="text-sm font-black mr-2 text-orange-700">ENG:</span> Lava, Wall, Divert</p><p class="lang-jpn hidden text-orange-900 font-bold text-lg"><span class="text-sm font-black mr-2 text-orange-700">JPN:</span> ようがん, かべ</p></div>
                         </div>
                     </div>
 
@@ -768,11 +761,11 @@
                     </div>
 
                     <div class="mt-12 pt-8 border-t-4 border-slate-300 border-dashed">
-                        <h3 class="text-2xl font-black text-slate-400 uppercase tracking-wider mb-6 flex items-center"><span class="mr-3">🔒</span><span class="lang-eng block">Captain's Log (Parent's Guide)</span><span class="lang-jpn hidden">キャプテンの記録（保護者向け）</span></h3>
+                        <h3 class="text-xl md:text-2xl font-black text-slate-400 uppercase tracking-wider mb-6 flex items-center"><span class="mr-3">🔒</span><span class="lang-eng block">Captain's Log (Parent's Guide)</span><span class="lang-jpn hidden">キャプテンの記録（保護者向け）</span></h3>
                         <div class="space-y-4">
                             <details class="group bg-slate-200 rounded-xl overflow-hidden border-2 border-slate-300">
-                                <summary class="p-5 font-black text-slate-600 uppercase tracking-wider cursor-pointer hover:bg-slate-300 flex justify-between items-center transition-colors"><span class="lang-eng block">Cheat Sheet Q&A</span><span class="lang-jpn hidden">よくある質問と答え</span><span class="text-xl group-open:rotate-180 transition-transform">▼</span></summary>
-                                <div class="p-6 bg-white border-t-2 border-slate-300 text-slate-700 font-medium space-y-6">
+                                <summary class="p-4 md:p-5 font-black text-slate-600 text-sm md:text-base uppercase tracking-wider cursor-pointer hover:bg-slate-300 flex justify-between items-center transition-colors"><span class="lang-eng block">Cheat Sheet Q&A</span><span class="lang-jpn hidden">よくある質問と答え</span><span class="text-xl group-open:rotate-180 transition-transform">▼</span></summary>
+                                <div class="p-4 md:p-6 bg-white border-t-2 border-slate-300 text-slate-700 font-medium space-y-6 text-sm md:text-base">
                                     <div class="lang-eng block">
                                         <p class="font-bold text-blue-900 mb-1">Ari: "I ran out of sticks! I need one more!"</p><p class="text-slate-600 bg-slate-50 p-3 rounded border border-slate-200"><span class="font-bold text-orange-600">Your Answer:</span> "An engineer works with the budget they have! Look at your first wall. What happens if you change its angle just a little bit to make it do two jobs at once?"</p>
                                     </div>
@@ -792,30 +785,30 @@
                 </div>
 
                 <div id="week-8" class="week-content hidden space-y-10">
-                    <div class="bg-white p-8 rounded-2xl border-4 border-blue-100 shadow-md">
-                        <h2 class="text-4xl font-black text-blue-900 uppercase tracking-tight"><span class="lang-eng block">Week 8: Mt. St. Helens</span><span class="lang-jpn hidden">第8週: セント・ヘレンズ山</span></h2>
-                        <p class="text-blue-600 mt-2 text-lg font-medium">Mission Code: The Grand Finale Field Deployment | Focus: Real-world cross-referencing, geological history, and ecological recovery.</p>
+                    <div class="bg-white p-6 md:p-8 rounded-2xl border-4 border-blue-100 shadow-md">
+                        <h2 class="text-3xl md:text-4xl font-black text-blue-900 uppercase tracking-tight"><span class="lang-eng block">Week 8: Mt. St. Helens</span><span class="lang-jpn hidden">第8週: セント・ヘレンズ山</span></h2>
+                        <p class="text-blue-600 mt-2 text-base md:text-lg font-medium">Mission Code: The Grand Finale Field Deployment | Focus: Real-world cross-referencing, geological history, and ecological recovery.</p>
                     </div>
 
-                    <div class="flex items-start space-x-6">
+                    <div class="flex flex-col md:flex-row items-center md:items-start gap-4 md:gap-0 md:space-x-6">
                         <div class="w-20 h-20 bg-blue-200 rounded-full flex items-center justify-center border-4 border-white shadow-md shrink-0 overflow-hidden"><img src="Barnacles_vector_profile_29.webp" class="w-full h-full object-cover"></div>
-                        <div class="bg-white p-6 rounded-2xl rounded-tl-none border-2 border-slate-200 shadow-md relative flex-1">
-                            <div class="absolute top-0 left-[-10px] w-0 h-0 border-t-[15px] border-t-white border-l-[15px] border-l-transparent"></div>
+                        <div class="bg-white p-6 rounded-2xl md:rounded-tl-none border-2 border-slate-200 shadow-md relative flex-1 w-full">
+                            <div class="hidden md:block absolute top-0 left-[-10px] w-0 h-0 border-t-[15px] border-t-white border-l-[15px] border-l-transparent"></div>
                             <h3 class="font-black text-blue-900 uppercase tracking-wider mb-4 text-lg"><span class="lang-eng block">Captain's Briefing</span><span class="lang-jpn hidden">キャプテンの指令</span></h3>
-                            <div class="lang-eng block"><p class="text-slate-700 font-medium text-lg leading-relaxed">"Attention, Lead Engineer Cadet Ari! Captain Barnacles, Tweak, and Kwazii are gathered in the launch bay, and they are saluting you. You have successfully completed every single laboratory simulation! Your final mission is the ultimate field test. We are deploying you directly to a real, live volcanic blast zone at Mount St. Helens! Your objective is to inspect the giant crater, find real volcanic rocks in the wild, and witness how nature heals itself after a massive explosion. Report back with your final field journal to earn your official printable Octonauts Volcanology Badge!"</p></div>
-                            <div class="lang-jpn hidden"><p class="text-slate-700 font-medium text-lg leading-relaxed">「世界最高のシミュレーション・エンジニア、アリ新隊員へ！キャプテン・バーナクル、トゥイーク、そしてクワジーが発進ベイに集まり、君に敬礼を送っているぞ。君はすべての実験室シミュレーションを見事にクリアした！ 最終任務は、本物の自然界との答え合わせだ。君を本物の火山、セント・ヘレンズ山の『大噴火跡地』へと派遣する！巨大な火口を調査し、野生の火山岩を観察し、大爆発の後に自然がどうやって復活していくのかを目撃するんだ。最終フィールドノートを完成させ、公式の『オクトナッツ火山学バッジ』をゲットしろ！」</p></div>
+                            <div class="lang-eng block"><p class="text-slate-700 font-medium text-base md:text-lg leading-relaxed">"Attention, Lead Engineer Cadet Ari! Captain Barnacles, Tweak, and Kwazii are gathered in the launch bay, and they are saluting you. You have successfully completed every single laboratory simulation! Your final mission is the ultimate field test. We are deploying you directly to a real, live volcanic blast zone at Mount St. Helens! Your objective is to inspect the giant crater, find real volcanic rocks in the wild, and witness how nature heals itself after a massive explosion. Report back with your final field journal to earn your official printable Octonauts Volcanology Badge!"</p></div>
+                            <div class="lang-jpn hidden"><p class="text-slate-700 font-medium text-base md:text-lg leading-relaxed">「世界最高のシミュレーション・エンジニア、アリ新隊員へ！キャプテン・バーナクル、トゥイーク、そしてクワジーが発進ベイに集まり、君に敬礼を送っているぞ。君はすべての実験室シミュレーションを見事にクリアした！ 最終任務は、本物の自然界との答え合わせだ。君を本物の火山、セント・ヘレンズ山の『大噴火跡地』へと派遣する！巨大な火口を調査し、野生の火山岩を観察し、大爆発の後に自然がどうやって復活していくのかを目撃するんだ。最終フィールドノートを完成させ、公式の『オクトナッツ火山学バッジ』をゲットしろ！」</p></div>
                         </div>
                     </div>
 
-                    <div class="bg-blue-600 p-8 rounded-2xl shadow-md text-white border-4 border-blue-500">
+                    <div class="bg-blue-600 p-6 md:p-8 rounded-2xl shadow-md text-white border-4 border-blue-500">
                         <h3 class="text-xl font-black uppercase tracking-wider mb-6 flex items-center"><span class="mr-2">💡</span><span class="lang-eng block">Core Concepts</span><span class="lang-jpn hidden">重要コンセプト</span></h3>
                         <div class="lang-eng block space-y-4">
-                            <p class="text-lg"><span class="font-bold text-white border-b-2 border-orange-400">The Lateral Blast:</span> Unlike standard volcanoes that blast straight up out of the top, Mount St. Helens exploded out of its side in 1980. This completely blew away the top of the mountain and left a giant horseshoe-shaped crater.</p>
-                            <p class="text-lg"><span class="font-bold text-white border-b-2 border-orange-400">Ecological Succession:</span> When a volcano erupts, it looks like everything is destroyed forever. But nature is incredibly tough. Tiny plants (like lupine flowers) act as "Pioneer Species," growing in the ash, fixing the soil, and paving the way for insects, birds, and trees to return.</p>
+                            <p class="text-base md:text-lg"><span class="font-bold text-white border-b-2 border-orange-400">The Lateral Blast:</span> Unlike standard volcanoes that blast straight up out of the top, Mount St. Helens exploded out of its side in 1980. This completely blew away the top of the mountain and left a giant horseshoe-shaped crater.</p>
+                            <p class="text-base md:text-lg"><span class="font-bold text-white border-b-2 border-orange-400">Ecological Succession:</span> When a volcano erupts, it looks like everything is destroyed forever. But nature is incredibly tough. Tiny plants (like lupine flowers) act as "Pioneer Species," growing in the ash, fixing the soil, and paving the way for insects, birds, and trees to return.</p>
                         </div>
                         <div class="lang-jpn hidden space-y-4">
-                            <p class="text-lg"><span class="font-bold text-white border-b-2 border-orange-400">側方爆発 (The Lateral Blast):</span> 普通の火山のように頂上からまっすぐ上に爆発するのではなく、セント・ヘレンズ山は1980年に山の「横」から爆発しました。これにより山の頂上が完全に吹き飛び、巨大な馬蹄型（U字型）の火口が残りました。</p>
-                            <p class="text-lg"><span class="font-bold text-white border-b-2 border-orange-400">自然の回復力 (Ecological Succession):</span> 火山が噴火すると、すべてが永遠に破壊されたように見えますが、自然は信じられないほどタフです。小さな植物（ルピナスの花など）が「開拓者」として灰の中で育ち、土壌を直し、虫や鳥、そして木々が戻ってくるための道を作ります。</p>
+                            <p class="text-base md:text-lg"><span class="font-bold text-white border-b-2 border-orange-400">側方爆発 (The Lateral Blast):</span> 普通の火山のように頂上からまっすぐ上に爆発するのではなく、セント・ヘレンズ山は1980年に山の「横」から爆発しました。これにより山の頂上が完全に吹き飛び、巨大な馬蹄型（U字型）の火口が残りました。</p>
+                            <p class="text-base md:text-lg"><span class="font-bold text-white border-b-2 border-orange-400">自然の回復力 (Ecological Succession):</span> 火山が噴火すると、すべてが永遠に破壊されたように見えますが、自然は信じられないほどタフです。小さな植物（ルピナスの花など）が「開拓者」として灰の中で育ち、土壌を直し、虫や鳥、そして木々が戻ってくるための道を作ります。</p>
                         </div>
                     </div>
 
@@ -823,23 +816,23 @@
                         <div class="bg-white p-6 rounded-2xl border-2 border-slate-200 shadow-sm col-span-1">
                             <h3 class="text-xl font-black text-blue-900 uppercase tracking-wider mb-6"><span class="lang-eng block">Materials</span><span class="lang-jpn hidden">必要なもの</span></h3>
                             <ul class="space-y-4 text-slate-700 font-bold text-sm">
-                                <li class="flex items-start"><input type="checkbox" id="mat-1-w8" class="mt-1 w-5 h-5 mr-3 accent-orange-500 cursor-pointer"> <label for="mat-1-w8" class="cursor-pointer"><span class="lang-eng block">Science journal & colored pencils</span><span class="lang-jpn hidden">ノートと色鉛筆</span></label></li>
-                                <li class="flex items-start"><input type="checkbox" id="mat-2-w8" class="mt-1 w-5 h-5 mr-3 accent-orange-500 cursor-pointer"> <label for="mat-2-w8" class="cursor-pointer"><span class="lang-eng block">Magnifying glass</span><span class="lang-jpn hidden">虫眼鏡</span></label></li>
-                                <li class="flex items-start"><input type="checkbox" id="mat-3-w8" class="mt-1 w-5 h-5 mr-3 accent-orange-500 cursor-pointer"> <label for="mat-3-w8" class="cursor-pointer"><span class="lang-eng block">Week 1 playdough model</span><span class="lang-jpn hidden">第1週の粘土モデル</span></label></li>
-                                <li class="flex items-start"><input type="checkbox" id="mat-4-w8" class="mt-1 w-5 h-5 mr-3 accent-orange-500 cursor-pointer"> <label for="mat-4-w8" class="cursor-pointer"><span class="lang-eng block">Digital or Toy Camera for Mia</span><span class="lang-jpn hidden">ミア用のカメラ（おもちゃ可）</span></label></li>
+                                <li class="flex items-start"><input type="checkbox" id="mat-1-w8" class="material-checkbox mt-1 w-5 h-5 mr-3 accent-orange-500 cursor-pointer"> <label for="mat-1-w8" class="cursor-pointer"><span class="lang-eng block">Science journal & colored pencils</span><span class="lang-jpn hidden">ノートと色鉛筆</span></label></li>
+                                <li class="flex items-start"><input type="checkbox" id="mat-2-w8" class="material-checkbox mt-1 w-5 h-5 mr-3 accent-orange-500 cursor-pointer"> <label for="mat-2-w8" class="cursor-pointer"><span class="lang-eng block">Magnifying glass</span><span class="lang-jpn hidden">虫眼鏡</span></label></li>
+                                <li class="flex items-start"><input type="checkbox" id="mat-3-w8" class="material-checkbox mt-1 w-5 h-5 mr-3 accent-orange-500 cursor-pointer"> <label for="mat-3-w8" class="cursor-pointer"><span class="lang-eng block">Week 1 playdough model</span><span class="lang-jpn hidden">第1週の粘土モデル</span></label></li>
+                                <li class="flex items-start"><input type="checkbox" id="mat-4-w8" class="material-checkbox mt-1 w-5 h-5 mr-3 accent-orange-500 cursor-pointer"> <label for="mat-4-w8" class="cursor-pointer"><span class="lang-eng block">Digital or Toy Camera for Mia</span><span class="lang-jpn hidden">ミア用のカメラ（おもちゃ可）</span></label></li>
                             </ul>
                         </div>
-                        <div class="bg-white p-8 rounded-2xl border-2 border-slate-200 shadow-sm col-span-2 flex flex-col justify-between">
+                        <div class="bg-white p-6 md:p-8 rounded-2xl border-2 border-slate-200 shadow-sm col-span-1 lg:col-span-2 flex flex-col justify-between">
                             <div>
                                 <h3 class="text-xl font-black text-blue-900 uppercase tracking-wider mb-6"><span class="lang-eng block">The Mission: The Live Field Inspection</span><span class="lang-jpn hidden">ミッション: 野外調査</span></h3>
-                                <div class="lang-eng block space-y-6 text-slate-700 font-medium text-[1.05rem] leading-snug">
+                                <div class="lang-eng block space-y-6 text-slate-700 font-medium text-base md:text-[1.05rem] leading-snug">
                                     <p>Take a family day trip up to the Mount St. Helens National Volcanic Monument.</p>
                                     <p><span class="font-bold text-blue-900">Step 1 (Ridge Horizon):</span> Take Ari to a viewpoint overlooking the crater. Have him hold up his Week 1 playdough model. Ask him: <span class="italic">"Where did the top of the mountain go?"</span></p>
                                     <p><span class="font-bold text-blue-900">Step 2 (Spirit Lake Logs):</span> Look out at Spirit Lake. Point out the thousands of gray trees knocked down like toothpicks from the 1980 blast wave.</p>
                                     <p><span class="font-bold text-blue-900">Step 3 (Real Rock Extraction):</span> Find a safe trail to look at the ground. Search for native pumice stones. Let him use his magnifying glass to inspect the tiny frozen gas bubbles.</p>
                                     <p><span class="font-bold text-blue-900">Step 4 (Award Ceremony):</span> Return home or find a picnic spot, sign off on his journal, congratulate him, and present him with his official Volcanology Badge!</p>
                                 </div>
-                                <div class="lang-jpn hidden space-y-6 text-slate-700 font-medium text-[1.05rem] leading-snug">
+                                <div class="lang-jpn hidden space-y-6 text-slate-700 font-medium text-base md:text-[1.05rem] leading-snug">
                                     <p>家族でセント・ヘレンズ山国定火山観測物へ日帰り旅行に行きます。</p>
                                     <p><span class="font-bold text-blue-900">ステップ 1 (火口の観察):</span> 火口を見渡せる展望台にアリを連れて行きます。第1週で作った粘土のモデルを持たせ、「山の頂上はどこに行っちゃったと思う？」と聞いてみましょう。</p>
                                     <p><span class="font-bold text-blue-900">ステップ 2 (スピリット湖の倒木):</span> スピリット湖を見てみましょう。1980年の爆発の衝撃波で、何千本もの木が爪楊枝のようになぎ倒されているのを教えてあげましょう。</p>
@@ -849,8 +842,8 @@
                             </div>
                             <div class="mt-8 bg-blue-50 border-l-4 border-orange-400 p-5 rounded-r-xl">
                                 <h3 class="text-lg font-black text-blue-900 uppercase tracking-wider mb-2 flex items-center"><span class="text-xl mr-2">👧🏻</span><span class="lang-eng block">Mia's Target: Eco-Scout Officer</span><span class="lang-jpn hidden">ミアの任務: 環境調査員</span></h3>
-                                <p class="lang-eng block text-blue-800 font-medium">Hand her a camera or cardboard tube "telescope." Her mission is to spot signs of life returning to the blast zone (flowers, birds, chipmunks). Every time she spots one, she yells "Life detected!" and Ari logs it.</p>
-                                <p class="lang-jpn hidden text-blue-800 font-medium">カメラかトイレットペーパーの芯で作った「望遠鏡」を渡します。彼女の任務は、爆発跡地に生命が戻ってきているサイン（花、鳥、シマリスなど）を見つけることです。見つけるたびに「生命反応あり！」と叫び、アリがそれをノートに記録します。</p>
+                                <p class="lang-eng block text-blue-800 font-medium text-sm md:text-base">Hand her a camera or cardboard tube "telescope." Her mission is to spot signs of life returning to the blast zone (flowers, birds, chipmunks). Every time she spots one, she yells "Life detected!" and Ari logs it.</p>
+                                <p class="lang-jpn hidden text-blue-800 font-medium text-sm md:text-base">カメラかトイレットペーパーの芯で作った「望遠鏡」を渡します。彼女の任務は、爆発跡地に生命が戻ってきているサイン（花、鳥、シマリスなど）を見つけることです。見つけるたびに「生命反応あり！」と叫び、アリがそれをノートに記録します。</p>
                             </div>
                         </div>
                     </div>
@@ -861,7 +854,7 @@
                             <div class="lang-eng block"><h4 class="font-bold text-orange-800 mb-1">The Drawing</h4><p class="text-orange-900 font-medium text-sm">Sit down at a viewpoint or a picnic table. Have Ari look directly at Mount St. Helens and sketch its unique, horseshoe-shaped crater profile into his journal.</p></div>
                             <div class="lang-jpn hidden"><h4 class="font-bold text-orange-800 mb-1">お絵かき</h4><p class="text-orange-900 font-medium text-sm">展望台かピクニックテーブルに座り、セント・ヘレンズ山を直接見ながら、その独特な馬蹄型（U字型）の火口のシルエットをノートにスケッチします。</p></div>
                             
-                            <div class="border-l-2 border-orange-200 pl-6"><h4 class="font-bold text-orange-800 mb-1">The Labeling Targets</h4><p class="lang-eng block text-orange-900 font-bold text-lg"><span class="text-sm font-black mr-2 text-orange-700">ENG:</span> Crust, Crater, Blast Zone, Recovery</p><p class="lang-jpn hidden text-orange-900 font-bold text-lg"><span class="text-sm font-black mr-2 text-orange-700">JPN:</span> ふんか, セント・ヘレンズ山</p></div>
+                            <div class="border-t-2 md:border-t-0 md:border-l-2 border-orange-200 pt-4 md:pt-0 md:pl-6"><h4 class="font-bold text-orange-800 mb-1">The Labeling Targets</h4><p class="lang-eng block text-orange-900 font-bold text-lg"><span class="text-sm font-black mr-2 text-orange-700">ENG:</span> Crust, Crater, Blast Zone, Recovery</p><p class="lang-jpn hidden text-orange-900 font-bold text-lg"><span class="text-sm font-black mr-2 text-orange-700">JPN:</span> ふんか, セント・ヘレンズ山</p></div>
                         </div>
                     </div>
 
@@ -876,11 +869,11 @@
                     </div>
 
                     <div class="mt-12 pt-8 border-t-4 border-slate-300 border-dashed">
-                        <h3 class="text-2xl font-black text-slate-400 uppercase tracking-wider mb-6 flex items-center"><span class="mr-3">🔒</span><span class="lang-eng block">Captain's Log (Parent's Guide)</span><span class="lang-jpn hidden">キャプテンの記録（保護者向け）</span></h3>
+                        <h3 class="text-xl md:text-2xl font-black text-slate-400 uppercase tracking-wider mb-6 flex items-center"><span class="mr-3">🔒</span><span class="lang-eng block">Captain's Log (Parent's Guide)</span><span class="lang-jpn hidden">キャプテンの記録（保護者向け）</span></h3>
                         <div class="space-y-4">
                             <details class="group bg-slate-200 rounded-xl overflow-hidden border-2 border-slate-300">
-                                <summary class="p-5 font-black text-slate-600 uppercase tracking-wider cursor-pointer hover:bg-slate-300 flex justify-between items-center transition-colors"><span class="lang-eng block">Cheat Sheet Q&A</span><span class="lang-jpn hidden">よくある質問と答え</span><span class="text-xl group-open:rotate-180 transition-transform">▼</span></summary>
-                                <div class="p-6 bg-white border-t-2 border-slate-300 text-slate-700 font-medium space-y-6">
+                                <summary class="p-4 md:p-5 font-black text-slate-600 text-sm md:text-base uppercase tracking-wider cursor-pointer hover:bg-slate-300 flex justify-between items-center transition-colors"><span class="lang-eng block">Cheat Sheet Q&A</span><span class="lang-jpn hidden">よくある質問と答え</span><span class="text-xl group-open:rotate-180 transition-transform">▼</span></summary>
+                                <div class="p-4 md:p-6 bg-white border-t-2 border-slate-300 text-slate-700 font-medium space-y-6 text-sm md:text-base">
                                     <div class="lang-eng block">
                                         <p class="font-bold text-blue-900 mb-1">Ari: "Why does the mountain look like a giant bowl instead of a sharp triangle pointy peak?"</p><p class="text-slate-600 bg-slate-50 p-3 rounded border border-slate-200"><span class="font-bold text-orange-600">Your Answer:</span> "Because it didn't just blow its top—it blew its whole side off! The magma pressure inside got so strong that the whole northern side of the mountain bulged out and slid away in a giant landslide, letting the explosion blast sideways across the valley."</p>
                                     </div>
